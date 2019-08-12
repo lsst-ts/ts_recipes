@@ -56,4 +56,6 @@ make_idl_files.py ATAOS \
     Test\
     TunableLaser\
     Watcher
-python setup.py install
+python setup.py sdist
+cd dist
+pip install ts_idl-${GIT_TAG_DESCRIBE}.tar.gz
