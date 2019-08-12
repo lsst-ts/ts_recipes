@@ -1,0 +1,31 @@
+{% set data=load_setup_py_data() %}
+package:
+  name: ts-idl
+  version: {{ GIT_DESCRIBE_TAG }}
+
+source:
+  git_url: https://github.com/lsst-ts/ts_idl
+  git_rev: tickets/DM-20888
+
+build:
+  skip: True #[win]
+  script_env:
+    - PATH
+    - PYTHONPATH
+    - LD_LIBRARY_PATH
+    - LSST_SDK_INSTALL
+    - OSPL_HOME
+    - LSST_DDS_DOMAIN
+    - PYTHON_BUILD_VERSION
+    - PYTHON_BUILD_LOCATION
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools_scm
+    - setuptools
+  run:
+    - python
+    - setuptools
+    - setuptools_scm
