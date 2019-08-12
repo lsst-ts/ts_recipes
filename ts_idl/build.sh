@@ -58,4 +58,4 @@ make_idl_files.py ATAOS \
     Watcher
 python setup.py sdist
 cd dist
-pip install ts_idl-${GIT_TAG_DESCRIBE}.tar.gz
+pip install ts_idl-${GIT_DESCRIBE_TAG}.tar.gz
