@@ -58,4 +58,4 @@ make_idl_files.py ATAOS \
     Watcher
 python setup.py sdist
 cd dist
-pip install ts_idl-${GIT_BUILD_STR}.tar.gz
+pip install *.tar.gz
