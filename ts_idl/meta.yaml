@@ -1,7 +1,8 @@
 {% set data=load_setup_py_data() %}
+
 package:
   name: ts-idl
-  version: {{ GIT_DESCRIBE_TAG }}
+  version: {{ data.get('version') }}_{{ TS_XML_VERSION }}
 
 source:
   git_url: https://github.com/lsst-ts/ts_idl
