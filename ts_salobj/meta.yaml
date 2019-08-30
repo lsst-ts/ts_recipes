@@ -1,11 +1,12 @@
 {% set data= load_setup_py_data() %}
+{% set tag = "v4.4.0" %}
 package:
   name: ts-salobj
   version: {{ GIT_DESCRIBE_TAG }}
 
 source:
   git_url: https://github.com/lsst-ts/ts_salobj
-  git_rev: master
+  git_rev: {{ tag }}
 
 build:
   script: python -m pip install --ignore-installed --no-deps .
