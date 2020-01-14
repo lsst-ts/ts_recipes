@@ -5,10 +5,10 @@ package:
 
 source:
   git_url: https://github.com/lsst-ts/ts_idl
-  git_rev: v1.0.0
+  git_rev: v1.1.0
 
 build:
-  skip: True #[win]
+  skip: False #[win]
   script_env:
     - PATH
     - PYTHONPATH

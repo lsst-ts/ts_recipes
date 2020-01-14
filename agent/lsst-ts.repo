@@ -1,0 +1,20 @@
+[lsst-ts]
+name=LSST Telescope and Site packages - $basearch
+baseurl=http://project.lsst.org/ts/lsstrepo
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[lsst-ts-debuginfo]
+name=LSST Telescope and Site - $basearch - Debug
+baseurl=http://project.lsst.org/ts/lsstrepo/debug
+failovermethod=priority
+enabled=0
+gpgcheck=0
+
+[lsst-ts-source]
+name=LSST Telescope and Site - $basearch - Source
+baseurl=http://project.lsst.org/ts/lsstrepo/source
+failovermethod=priority
+enabled=0
+gpgcheck=0
