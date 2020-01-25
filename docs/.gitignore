@@ -8,3 +8,16 @@ doxygen.conf
 # Sphinx products
 _build
 py-api
+
+# OS
+*.swp
+
+# Programming
+*Lib.py
+*.pyc
+.eggs/*
+*.so
+*.cfgc
+*_wrap.cc
+*.o
+*.os
