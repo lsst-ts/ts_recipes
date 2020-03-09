@@ -5,11 +5,20 @@ package:
 
 source:
   git_url: https://github.com/lsst-ts/ts_salobj
-  git_rev: master
+  git_rev: {{ TS_SALOBJ_VERSION }}
 
 build:
-  script: python -m pip install --ignore-installed --no-deps .
+  script: python -m pip install --ignore-installed .
   skip: True #[win]
+
+test:
+  requires:
+    - pytest
+    - pytest-flake8
+    - pytest-cov
+    - asynctest
+#  commands:
+#    - py.test
 
 requirements:
   host:
@@ -23,14 +32,7 @@ requirements:
     - setuptools
     - setuptools_scm
     - numpy
+    - astropy
     - jsonschema
     - pyyaml
-
-test:
-  requires:
-    - pytest
-    - pytest-flake8
-    - pytest-cov
-
-# commands:
-   # - py.test --pyargs lsst.ts.salobj tests/
+    - boto3

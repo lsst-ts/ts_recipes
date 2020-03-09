@@ -1,0 +1,20 @@
+[lsst-ts]
+name=LSST Telescope and Site packages - $basearch
+baseurl=https://repo-nexus.lsst.org/nexus/repository/ts_yum/releases
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+#[lsst-ts-debuginfo]
+#name=LSST Telescope and Site - $basearch - Debug
+#baseurl=https://repo-nexus.lsst.org/nexus/repository/ts_yum/debug
+#failovermethod=priority
+#enabled=0
+#gpgcheck=0
+
+[lsst-ts-test]
+name=LSST Telescope and Site - $basearch - Source
+baseurl=https://repo-nexus.lsst.org/nexus/repository/ts_yum/test
+failovermethod=priority
+enabled=0
+gpgcheck=0
