@@ -1,0 +1,48 @@
+pipeline {
+   agent {
+    docker {
+      alwaysPull true
+      label 'Arm64_2CPU'
+      image 'lsstts/conda_package_builder:latest'
+      args "--entrypoint='' --user root"
+    }
+  }
+
+  options {
+      disableConcurrentBuilds()
+  }
+  stages {
+    stage("Build"){
+      steps {
+        withEnv(["WHOME=${env.WORKSPACE}"]){
+          sh """
+          source /home/saluser/.startup.sh
+          source \${OSPL_HOME}/release.com
+          cd ${WHOME}
+          conda config --add channels conda-forge
+          conda config --add channels lsstts
+          conda install -y conda-build anaconda-client setuptools_scm
+          cd ${WHOME}/ts_dds/src/
+          python setup.py sdist bdist_wheel
+          chmod a+rw -R ./
+          cd ${WHOME}/ts_dds
+          conda build . || echo conda build error
+          """
+        }
+      }
+    }
+    stage("Push Conda package") {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'CondaForge', passwordVariable: 'anaconda_pass', usernameVariable: 'anaconda_user')]) {
+            withEnv(["WHOME=${env.WORKSPACE}"]) {
+                sh """
+                source /home/saluser/.startup.sh
+                anaconda login --user ${anaconda_user} --password ${anaconda_pass}
+                anaconda upload -u lsstts --force /opt/lsst/software/stack/miniforge/conda-bld/linux-aarch64/ts-dds-*.tar.bz2
+                """
+            }
+        }
+      }
+    }
+  }
+}

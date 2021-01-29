@@ -1,0 +1,34 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: ts-dds
+  version: 6.9.190925
+
+source:
+  path: src/
+
+build:
+  script: python -m pip install dist/dds-6.9.190925OSS-cp38-cp38-linux_aarch64.whl
+  script_env:
+    - CPATH
+    - OSPL_TMPL_PATH
+    - VORTEX_DIR
+    - PATH
+    - PYTHONPATH
+    - LD_LIBRARY_PATH
+    - OSPL_HOME
+    - PYTHON_BUILD_VERSION
+    - PYTHON_BUILD_LOCATION
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools_scm
+    - setuptools
+    - pytest-runner
+    - cython
+  run:
+    - python=3.8
+    - setuptools
+    - setuptools_scm
+    - cython
