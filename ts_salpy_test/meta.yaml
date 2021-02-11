@@ -1,0 +1,17 @@
+{% set packagename = "ts-salpy-test" %}
+{% set version = "4.1.1_5.1.0" %}
+{% set rpmurl = "https://repo-nexus.lsst.org/nexus/repository/ts_yum/releases/Test-{{version}}.el7.x86_64.rpm" %}
+{% set home = "https://github.com/lsst-ts/ts_sal" %}
+
+package:
+    name: {{packagename}}
+    version: {{version}}
+source:
+    - url: "https://repo-nexus.lsst.org/nexus/repository/ts_yum/releases/Test-{{version| replace("_", "-")}}.el7.x86_64.rpm"
+      no_hoist: true
+      folder: binary
+build:
+    number: 2
+    noarch: generic
+about:
+    home: {{home}}
