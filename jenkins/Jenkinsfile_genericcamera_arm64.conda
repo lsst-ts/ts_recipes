@@ -1,0 +1,44 @@
+pipeline {
+   agent {
+    docker {
+      alwaysPull true
+      label 'Arm64_2CPU'
+      image 'lsstts/ts_genericcamera_arm64:latest'
+      args "--entrypoint='' --user root"
+    }
+  }
+
+  options {
+      disableConcurrentBuilds()
+  }
+  stages {
+    stage("Build"){
+      steps {
+        withEnv(["WHOME=${env.WORKSPACE}"]){
+          sh """
+          source /opt/lsst/software/stack/miniforge/bin/activate
+          source \${OSPL_HOME}/release.com
+          conda config --add channels conda-forge
+          conda config --add channels lsstts
+          conda install -y conda-build anaconda-client setuptools_scm
+          conda build . || echo conda build error
+          """
+        }
+      }
+    }
+    stage("Push Conda package") {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'CondaForge', passwordVariable: 'anaconda_pass', usernameVariable: 'anaconda_user')]) {
+            withEnv(["WHOME=${env.WORKSPACE}"]) {
+                sh """
+                source /opt/lsst/software/stack/miniforge/bin/activate
+                source \${OSPL_HOME}/release.com
+                anaconda login --user ${anaconda_user} --password ${anaconda_pass}
+                anaconda upload -u lsstts --force /opt/lsst/software/stack/miniforge/conda-bld/linux-aarch64/ts-genericcamera-*.tar.bz2
+                """
+            }
+        }
+      }
+    }
+  }
+}
