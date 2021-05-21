@@ -1,38 +1,25 @@
 package:
   name: ts-develop
-  version: 0.1.0
+  version: 0.3.1
 
 requirements:
   run:
-    - aiokafka
-    - astroquery
-    - asynctest
-    - black ==19.10b0
-    - boto3
-    - ephem
-    - fontconfig
-    - ginga
-    - gitpython
-    - ipdb
-    - ipympl
-    - jinja2
-    - jsonschema
-    - jupyter
-    - kafkacat
-    - lxml
-    - moto
-    - pre-commit
-    - pycodestyle
-    - pyqt
-    - pytest
-    - pytest-asyncio
-    - pytest-black
-    - pytest-cov
-    - pytest-flake8
-    - pytest-subtests
-    - pytest-tornasync
-    - pyyaml
-    - setuptools
-    - setuptools_scm
-    - sqlalchemy
-    - wget
+    - aiokafka =0.7
+    - astroquery =0.4
+    - asynctest =0.13
+    - black =20
+    - ephem =3
+    - ginga =3.1
+    - ipdb =0.13
+    - ipympl =0.6
+    - jupyter =1
+    - kafkacat =1.4
+    - lxml =4.6
+    - pre-commit =2.10
+    - pyqt =5.12
+    - pytest-asyncio =0.14
+    - pytest-black =0.3
+    - pytest-tornasync =0.6
+    - rubin-env =0.5
+    - setuptools_scm =5.0
+    - wget =1.20
