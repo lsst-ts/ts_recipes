@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.1
+  version: 0.3.2
 
 requirements:
   run:
@@ -20,6 +20,6 @@ requirements:
     - pytest-asyncio =0.14
     - pytest-black =0.3
     - pytest-tornasync =0.6
-    - rubin-env =0.5
+    - rubin-env =0.6
     - setuptools_scm =5.0
     - wget =1.20
