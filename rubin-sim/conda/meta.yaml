@@ -1,0 +1,63 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: rubin-sim
+  version: {{ data.get('version') }}
+
+source:
+  git_url: https://github.com/lsst/rubin_sim
+  git_rev: {{ CONDA_BUILD_TAG }}
+
+build:
+  script: python -m pip install --no-deps --ignore-installed .
+
+test:
+  requires:
+    - pytest
+    - pytest-flake8
+    - pytest-cov
+    - astroplan
+    - astropy
+    - colorcet
+    - h5py
+    - healpy
+    - matplotlib
+    - numpy
+    - openorb
+    - openorb-data-de405
+    - palpy
+    - pandas
+    - pytables
+    - scikit-learn
+    - scipy
+    - sqlalchemy
+    - sqlite
+  source_files:
+    - tests/
+  commands:
+    - rs_download_data
+    - pytest -vsx tests/
+
+requirements:
+  host:
+    - python =3.8
+    - pip
+    - setuptools_scm
+    - setuptools
+  run:
+    - python =3.8
+    - astroplan
+    - astropy
+    - colorcet
+    - h5py
+    - healpy
+    - matplotlib
+    - numpy
+    - openorb
+    - openorb-data-de405
+    - palpy
+    - pandas
+    - pytables
+    - scikit-learn
+    - scipy
+    - sqlalchemy
+    - sqlite
