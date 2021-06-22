@@ -8,6 +8,7 @@ source:
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
+  noarch: generic  
   script: python -m pip install --no-deps --ignore-installed .
 
 test:
