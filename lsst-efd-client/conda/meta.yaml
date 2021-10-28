@@ -1,0 +1,48 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: lsst-efd-client
+  version: "{{ load_setup_py_data().version }}"
+
+source:
+  git_url: https://github.com/lsst-sqre/lsst-efd-client
+  git_rev: {{ CONDA_BUILD_TAG }}
+
+build:
+  noarch: generic
+  script: python -m pip install --no-deps --ignore-installed .
+
+test:
+  requires:
+    - pytest
+    - pytest-asyncio
+    - pytest-flake8
+    - pytest-cov
+    - pytest-vcr
+  source_files:
+    - tests/
+  commands:
+    - pytest -vsx tests/
+
+requirements:
+  host:
+    - pip
+    - bump2version
+    - wheel
+    - watchdog
+    - flake8
+    - coverage
+    - twine
+    - pytest
+    - python =3.8
+    - pip
+    - setuptools_scm
+    - setuptools
+  run:
+    - python =3.8
+    - numpy
+    - aioinflux
+    - pandas
+    - astropy
+    - pyyaml
+    - tables
+    - kafkit
