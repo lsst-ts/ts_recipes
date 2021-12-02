@@ -42,6 +42,7 @@ requirements:
   host:
     - python =3.8
     - pip
+    - setuptools_scm_git_archive
     - setuptools_scm
     - setuptools
   run:
