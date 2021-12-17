@@ -1,0 +1,40 @@
+{% set version = "6.9.210323" %}
+
+package:
+  name: ts-opensplice-community
+  version: {{ GIT_DESCRIBE_TAG }}
+
+source:
+  git_url: https://github.com/lsst-ts/ts_opensplice_community
+
+build:
+  missing_dso_whitelist: /lib64/*
+  skip: True #[win]
+  
+requirements:
+  build:
+    - python
+    - cython
+    - wheel
+    
+  host:
+    - python
+    - pip
+    - setuptools_scm
+    - setuptools
+    - pytest-runner
+    - cython
+
+  run:
+    - python=3.8
+    - setuptools_scm
+
+about:
+  home: https://github.com/lsst-ts/ts_opensplice
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: ADLINK OpenSplice DDS Community edition (Rubin Observatory build)
+
+extra:
+  recipe-maintainers:
+    - dmills@lsst.org
