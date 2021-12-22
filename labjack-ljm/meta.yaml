@@ -1,0 +1,39 @@
+# Version of labjack-ljm Python wrapper
+{% set version = "1.21.0" %}
+
+package:
+  name: labjack-ljm
+  version: {{ version }}
+
+build:
+  number: 0
+  missing_dso_whitelist:
+    - /lib64/ld-linux-x86-64.so.2
+    - /lib64/libc.so.6
+    - /lib64/libm.so.6
+    - /lib64/libusb-1.0.so.0
+
+requirements:
+  build:
+    - python
+    - pip
+    - cython
+    
+  host:
+    - python
+    - setuptools_scm
+    - setuptools
+    - cython
+
+  run:
+    - python=3.8
+    - setuptools_scm
+
+about:
+  home: https://labjack.com/support/software/installers/ljm
+  license: LabJack
+  summary: LabJack C library and python wrapper for T-4, T-7, and Digit devices.
+
+extra:
+  recipe-maintainers:
+    - rowen@uw.edu
