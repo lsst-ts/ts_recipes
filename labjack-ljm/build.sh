@@ -2,6 +2,7 @@
 
 # Version string in the C library installer's file name
 file_version=2019_07_16
+python_file_version=2020_11_20
 # The desired architecture, as descripbed in the C library installer's file name
 arch=x86_64
 # The version of the C library in the above file.
@@ -16,11 +17,15 @@ c_version=1.20.1
 python_version=1.21.0
 
 echo "Download and unpack labjack-ljm C library labjack_ljm_software_${file_version}_${arch}.tar.gz"
-wget https://labjack.com/sites/default/files/software/labjack_ljm_software_${file_version}_${arch}.tar.gz
+curl -O https://labjack.com/sites/default/files/software/labjack_ljm_software_${file_version}_${arch}.tar.gz
+curl -O https://labjack.com/sites/default/files/software/Python_LJM_${python_file_version}.zip
+
 # labjack_ljm_installer.run creates a directory labjack_ljm_software
 # which includes setup.sh, the script that installs the library.
 # It hard-codes the destination, so run sed to patch it.
 tar -xzf labjack_ljm_software_${file_version}_${arch}.tar.gz
+unzip Python_LJM_${python_file_version}.zip
+
 cd labjack_ljm_software_${file_version}_${arch}
 ./labjack_ljm_installer.run --keep --noexec
 
@@ -44,4 +49,8 @@ bash patchedsetup.sh ${c_version}
 
 # This command is based on the conda's click example
 echo "Install labjack-ljm Python wrapper ${python_version}"
-python -m pip install labjack-ljm==${python_version} --no-deps --ignore-installed -vv
+
+cd ../../Python_LJM_${python_file_version}/
+
+${PYTHON} -m pip install . -vv
+

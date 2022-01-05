@@ -15,10 +15,12 @@ build:
 
 requirements:
   build:
+    - {{ compiler('cxx') }}
     - python
     - pip
     - cython
-    
+    - libusb
+    - sysroot_linux-64
   host:
     - python
     - setuptools_scm
@@ -27,7 +29,8 @@ requirements:
 
   run:
     - python=3.8
-    - setuptools_scm
+    - libusb
+    - sysroot_linux-64
 
 about:
   home: https://labjack.com/support/software/installers/ljm
