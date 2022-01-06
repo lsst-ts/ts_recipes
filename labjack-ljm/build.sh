@@ -20,12 +20,12 @@ echo "Download and unpack labjack-ljm C library labjack_ljm_software_${file_vers
 curl -O https://labjack.com/sites/default/files/software/labjack_ljm_software_${file_version}_${arch}.tar.gz
 curl -O https://labjack.com/sites/default/files/software/Python_LJM_${python_file_version}.zip
 
-# labjack_ljm_installer.run creates a directory labjack_ljm_software
-# which includes setup.sh, the script that installs the library.
-# It hard-codes the destination, so run sed to patch it.
 tar -xzf labjack_ljm_software_${file_version}_${arch}.tar.gz
 unzip Python_LJM_${python_file_version}.zip
 
+# labjack_ljm_installer.run creates a directory labjack_ljm_software
+# which includes setup.sh, the script that installs the library.
+# setup.sh hard-codes the destination, so run sed to patch it before running it.
 cd labjack_ljm_software_${file_version}_${arch}
 ./labjack_ljm_installer.run --keep --noexec
 
@@ -35,9 +35,10 @@ cd labjack_ljm_software
 sed "s|=/usr/local|=${PREFIX}|" setup.sh >temp.sh
 # Stop before doing the following steps:
 # * ldconfig, because it tries to update system ldconfig, which is the wrong one
-# * Installing rules: setup.sh puts them in /etc; where is that in conda images?
-#   I hope we don't need them.
-# * Installing Kipling: we don't need it. Note that there is also
+# * Install rules: setup.sh puts them in /etc; where is that in conda images?
+#   Rules are only used to run LabJack over USB.
+#   It would be nice to have USB support, but we only really need TCP.
+# * Install Kipling: we don't need it. Note that there is also
 #   an undocumented command-line argument for this, in case we figure out
 #   how to update the right ldconfig and install rules in the correct location.
 sed "s|install_ljm_constants$|install_ljm_constants\n\n# Quit early\nsuccess|" temp.sh >patchedsetup.sh
@@ -47,10 +48,7 @@ echo "Diff between patched and unpatched install script:"
 diff patchedsetup.sh setup.sh || true
 bash patchedsetup.sh ${c_version}
 
-# This command is based on the conda's click example
 echo "Install labjack-ljm Python wrapper ${python_version}"
-
 cd ../../Python_LJM_${python_file_version}/
-
 ${PYTHON} -m pip install . -vv
 
