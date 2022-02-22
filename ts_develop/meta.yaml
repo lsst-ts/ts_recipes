@@ -18,6 +18,7 @@ requirements:
     - mypy =0.910
     - pre-commit =2.11
     - pyqt =5.12
+    - pytest =6.2.4
     - pytest-asyncio =0.18
     - pytest-black =0.3
     - pytest-mypy =0.8
