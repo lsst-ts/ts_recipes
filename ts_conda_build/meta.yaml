@@ -1,12 +1,12 @@
 package:
   name: ts-conda-build
-  version: 0.3.3
+  version: 0.3.4
 
 requirements:
   run:
     - astropy >=5
     - asynctest =0.13
-    - black =20.8b1
+    - black =22
     - boto3 =1.21
     - jsonschema =3.2
     - moto =3

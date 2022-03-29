@@ -1,13 +1,13 @@
 package:
   name: ts-develop
-  version: 0.3.6
+  version: 0.3.7
 
 requirements:
   run:
     - aiokafka =0.7
     - astroquery =0.4
     - asynctest =0.13
-    - black =20
+    - black =22
     - ephem =4.1
     - ginga =3.3
     - ipdb =0.13
