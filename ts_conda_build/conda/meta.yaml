@@ -1,17 +1,17 @@
 package:
   name: ts-conda-build
-  version: 0.3.4
+  version: 0.3.5
 
 requirements:
   run:
     - astropy >=5
     - asynctest =0.13
     - black =22
-    - boto3 =1.21
+    - boto3 =1.22
     - jsonschema =3.2
     - moto =3
     - mypy =0.941
-    - numpy =1.20
+    - numpy =1.22
     - pre-commit =2.17
     - pytest =7
     - pytest-asyncio =0.18
@@ -20,8 +20,8 @@ requirements:
     - pytest-flake8 =1.0
     - pytest-mypy =0.8
     - pytest-tornasync =0.6
-    - python =3.8
+    - python
     - pyyaml =6.0
-    - setuptools =60.9
+    - setuptools =62
     - setuptools_scm =6.4
     - types-pyyaml =6.0
