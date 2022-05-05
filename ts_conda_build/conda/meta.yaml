@@ -2,6 +2,9 @@ package:
   name: ts-conda-build
   version: 0.3.5
 
+build:
+  noarch: generic
+
 requirements:
   run:
     - astropy >=5
