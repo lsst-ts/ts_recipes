@@ -7,7 +7,7 @@ source:
   path: src/
 
 build:
-  script: python -m pip install dist/dds-6.9.190925OSS-cp38-cp38-linux_aarch64.whl
+  script: python -m pip install .
   script_env:
     - CPATH
     - OSPL_TMPL_PATH
@@ -28,7 +28,7 @@ requirements:
     - pytest-runner
     - cython
   run:
-    - python=3.8
+    - python
     - setuptools
     - setuptools_scm
     - cython

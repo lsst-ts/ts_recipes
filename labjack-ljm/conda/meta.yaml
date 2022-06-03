@@ -1,0 +1,27 @@
+package:
+  name: "labjack-ljm"
+  version: 1.21
+
+source:
+  path: ../
+
+requirements:
+  host:
+    - python
+    - setuptools_scm
+    - setuptools
+  run:
+    - python
+    - setuptools
+    - setuptools_scm
+
+about:
+  home: https://labjack.com/support/software/installers/ljm
+  license: LabJack
+  summary: LabJack C library and python wrapper for T-4, T-7, and Digit devices.
+
+extra:
+  maintainers:
+    - Russell Owen <rowen@uw.edu>
+    - Tiago Ribeiro <tribeiro@lsst.org>
+    - Wouter van Reeven <wvanreeven@lsst.org>
