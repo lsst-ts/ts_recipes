@@ -4,7 +4,7 @@ package:
   version: 6.9.190925
 
 source:
-  path: src/
+  path: src
 
 build:
   script: python -m pip install .
