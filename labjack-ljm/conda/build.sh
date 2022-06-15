@@ -54,6 +54,28 @@ echo "Install labjack-ljm Python wrapper ${python_version}"
 
 cd ../../Python_LJM_${python_file_version}/
 
+cat >> labjack/ljm/ljm.py <<EOL
+
+
+# Vera Rubin Observatory patch to make the conda package work.
+import os
+import pathlib
+
+CONSTANTS_FILE_RELATIVE_PATH = pathlib.Path("LabJack/LJM/ljm_constants.json")
+CONSTANTS_FILE_DEFAULT_PATH = (
+    pathlib.Path("/usr/local/share") / CONSTANTS_FILE_RELATIVE_PATH
+)
+CONDA_PREFIX = os.environ.get("CONDA_PREFIX")
+if not os.path.exists(CONSTANTS_FILE_DEFAULT_PATH) and CONDA_PREFIX is not None:
+    # Try to load the file from the conda package. If this fails then it will
+    # manifest itself when the library is attempted to be used.
+    CONSTANTS_FILE_CONDA_PATH = str(
+        CONDA_PREFIX / pathlib.Path("share") / CONSTANTS_FILE_RELATIVE_PATH
+    )
+    writeLibraryConfigStringS(constants.CONSTANTS_FILE, CONSTANTS_FILE_CONDA_PATH)
+
+EOL
+
 ${PYTHON} -m pip install . -vv
 
 ls -la ${PREFIX}/
