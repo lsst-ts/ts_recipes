@@ -1,0 +1,40 @@
+{% set version = "6.10.4" %}
+
+package:
+  name: ts-opensplice-private
+  version: {{ GIT_DESCRIBE_TAG }}
+
+source:
+  git_url: https://github.com/lsst-ts/ts_opensplice_private
+
+build:
+  missing_dso_whitelist: /lib64/*
+  skip: True #[win]
+  
+requirements:
+  build:
+    - python
+    - cython
+    - wheel
+    
+  host:
+    - python
+    - pip
+    - setuptools_scm
+    - setuptools
+    - pytest-runner
+    - cython
+
+  run:
+    - python=3.8
+    - setuptools_scm
+
+about:
+  home: https://github.com/lsst-ts/ts_opensplice_private
+  license: ADLINK
+  license_file: LICENSE
+  summary: ADLINK OpenSplice DDS Enterprise edition (Rubin Observatory build)
+
+extra:
+  recipe-maintainers:
+    - dmills@lsst.org

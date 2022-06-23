@@ -1,0 +1,2 @@
+@Library('JenkinsShared')_
+ExternalCondaPipeline("ts_conda_build", "linux-aarch64")
