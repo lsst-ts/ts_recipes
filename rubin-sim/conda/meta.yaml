@@ -10,6 +10,26 @@ source:
 build:
   noarch: generic  
   script: python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - rs_download_data = rubin_sim.data.rs_download_data:rs_download_data
+    - rs_download_sky = rubin_sim.data.rs_download_sky:rs_download_sky
+    - addRun = rubin_sim.maf.db.add_run:addRun
+    - ddf_dir = rubin_sim.maf.ddf_dir:ddf_dir
+    - gather_summaries = rubin_sim.maf.runComparison.gather_summaries:gather_summaries
+    - generate_ss = rubin_sim.maf.generate_ss:generate_ss
+    - glance_dir = rubin_sim.maf.glance_dir:glance_dir
+    - maf_night_report = rubin_sim.maf.maf_night_report:maf_night_report
+    - metadata_dir = rubin_sim.maf.metadata_dir:metadata_dir
+    - resultdb_combine = rubin_sim.maf.runComparison.resultdb_combine:resultdb_combine
+    - run_moving_calc = rubin_sim.maf.run_moving_calc:run_moving_calc
+    - run_moving_fractions = rubin_sim.maf.run_moving_fractions:run_moving_fractions
+    - run_moving_join = rubin_sim.maf.batches.run_moving_join:run_moving_join
+    - scimaf_dir = rubin_sim.maf.scimaf_dir:scimaf_dir
+    - showMaf = rubin_sim.maf.show_maf:showMaf
+    - addSeds = rubin_sim.movingObjects.add_seds:add_seds
+    - generateCoefficients = rubin_sim.movingObjects.generate_coefficients:generate_coefficients
+    - makeLSSTobs = rubin_sim.movingObjects.make_lsst_obs:make_lsst_obs
+
 
 test:
   requires:
@@ -34,20 +54,23 @@ test:
     - sqlalchemy
     - sqlite
   source_files:
-    - tests/
+    - rubin_sim
+    - tests
+    - setup.cfg
+    - pyproject.toml
   commands:
     - rs_download_data
-    - pytest -vsx tests/
+    - pytest -vsx
 
 requirements:
   host:
-    - python =3.8
+    - python
     - pip
     - setuptools_scm_git_archive
     - setuptools_scm
     - setuptools
   run:
-    - python =3.8
+    - python
     - astroplan
     - astropy
     - colorcet
