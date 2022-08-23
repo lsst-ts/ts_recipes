@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.6
+  version: 0.3.7
 
 requirements:
   build:
@@ -14,7 +14,7 @@ requirements:
     - flake8 =4
     - jsonschema =3.2
     - moto =3
-    - mypy =0.941
+    - mypy =0.971
     - numpy {{ numpy }}
     - pre-commit =2.17
     - pytest =7
