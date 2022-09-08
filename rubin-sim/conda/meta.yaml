@@ -50,6 +50,8 @@ test:
     - scipy
     - sqlalchemy
     - sqlite
+    - shapely
+    - skyfield
   source_files:
     - rubin_sim
     - tests
@@ -84,3 +86,6 @@ requirements:
     - scipy
     - sqlalchemy
     - sqlite
+    - shapely
+    - skyfield
+    
