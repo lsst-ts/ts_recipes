@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.7
+  version: 0.3.8
 
 requirements:
   run:
@@ -16,7 +16,7 @@ requirements:
     - kafkacat =1.7
     - lxml =4.8
     - moto =3
-    - mypy =0.941
+    - mypy =0.971
     - pre-commit =2.17
     - pyqt =5.12
     - pytest =7

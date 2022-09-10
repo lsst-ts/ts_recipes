@@ -20,14 +20,11 @@ build:
     - glance_dir = rubin_sim.maf.glance_dir:glance_dir
     - maf_night_report = rubin_sim.maf.maf_night_report:maf_night_report
     - metadata_dir = rubin_sim.maf.metadata_dir:metadata_dir
-    - resultdb_combine = rubin_sim.maf.runComparison.resultdb_combine:resultdb_combine
     - run_moving_calc = rubin_sim.maf.run_moving_calc:run_moving_calc
     - run_moving_fractions = rubin_sim.maf.run_moving_fractions:run_moving_fractions
     - run_moving_join = rubin_sim.maf.batches.run_moving_join:run_moving_join
     - scimaf_dir = rubin_sim.maf.scimaf_dir:scimaf_dir
     - showMaf = rubin_sim.maf.show_maf:showMaf
-    - addSeds = rubin_sim.movingObjects.add_seds:add_seds
-    - generateCoefficients = rubin_sim.movingObjects.generate_coefficients:generate_coefficients
     - makeLSSTobs = rubin_sim.movingObjects.make_lsst_obs:make_lsst_obs
 
 
@@ -53,6 +50,8 @@ test:
     - scipy
     - sqlalchemy
     - sqlite
+    - shapely
+    - skyfield
   source_files:
     - rubin_sim
     - tests
@@ -87,3 +86,6 @@ requirements:
     - scipy
     - sqlalchemy
     - sqlite
+    - shapely
+    - skyfield
+    
