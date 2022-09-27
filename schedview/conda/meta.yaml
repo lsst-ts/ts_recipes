@@ -1,0 +1,55 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: rubin-sim
+  version: {{ data.get('version') }}
+
+source:
+  git_url: https://github.com/lsst/schedview
+  git_rev: {{ CONDA_BUILD_TAG }}
+
+build:
+  noarch: generic  
+  script: python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - sched_maps = schedview.app.start:sched_maps
+    - metric_maps = schedview.app.start:metric_maps
+
+test:
+  requires:
+    - pytest
+    - pytest-flake8
+    - pytest-cov
+    - pytest-black
+    - bokeh
+    - rubin-sim
+    - numpy
+    - healpy
+    - pandas
+    - astropy
+    - selenium
+    - firefox
+    - geckodriver
+  source_files:
+    - schedview
+    - tests
+    - setup.cfg
+    - pyproject.toml
+  commands:
+    - pytest -vsx
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools_scm_git_archive
+    - setuptools_scm
+    - setuptools
+  run:
+    - python
+    - bokeh
+    - rubin-sim
+    - numpy
+    - healpy
+    - pandas
+    - astropy
+    
