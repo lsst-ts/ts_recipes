@@ -52,6 +52,7 @@ test:
     - sqlite
     - shapely
     - skyfield
+    - tqdm
   source_files:
     - rubin_sim
     - tests
@@ -88,4 +89,5 @@ requirements:
     - sqlite
     - shapely
     - skyfield
+    - tqdm
     
