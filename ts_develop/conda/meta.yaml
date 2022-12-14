@@ -5,6 +5,7 @@ package:
 requirements:
   run:
     - aiokafka =0.7
+    - astroplan =0.9
     - astroquery =0.4
     - asynctest =0.13
     - black =22
