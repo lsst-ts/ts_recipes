@@ -1,11 +1,11 @@
 package:
   name: ts-develop
-  version: 0.3.10
+  version: 0.3.11
 
 requirements:
   run:
     - aiokafka =0.7
-    - astroplan =0.9
+    - astroplan =0.8
     - astroquery =0.4
     - asynctest =0.13
     - black =22
@@ -20,6 +20,7 @@ requirements:
     - mypy =0.991
     - pre-commit =2.20
     - pyqt =5.12
+    - py =1
     - pytest =7
     - pytest-asyncio =0.20
     - pytest-black =0.3
