@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.11
+  version: 0.3.12
 
 requirements:
   run:
@@ -15,6 +15,9 @@ requirements:
     - ipympl =0.9
     - jupyter =1
     - kafkacat =1.7
+    - kafkit =0.2
+    - lsst-documenteer-guide =0.7
+    - lsst-documenteer-pipelines =0.7
     - lxml =4.8
     - moto =3
     - mypy =0.991
@@ -26,6 +29,7 @@ requirements:
     - pytest-black =0.3
     - pytest-mypy =0.8
     - pytest-tornasync =0.6
+    - python-confluent-kafka =1.9
     - rubin-env >=0.7
     - setuptools_scm =7.0
     - types-pyyaml =6.0
