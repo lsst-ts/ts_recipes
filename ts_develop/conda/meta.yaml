@@ -10,7 +10,7 @@ requirements:
     - astroplan =0.8
     - astroquery =0.4
     - asynctest =0.13
-    - black =23
+    - black =22
     - ephem =4.1
     - ginga =3.4
     - ipdb =0.13
