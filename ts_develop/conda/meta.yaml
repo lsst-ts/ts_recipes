@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.15
+  version: 0.3.16
 
 requirements:
   run:
@@ -10,7 +10,7 @@ requirements:
     - astroplan =0.8
     - astroquery =0.4
     - asynctest =0.13
-    - black =22
+    - black =23
     - ephem =4.1
     - ginga =3.4
     - ipdb =0.13
@@ -23,7 +23,7 @@ requirements:
     - lsst-documenteer-pipelines =0.7
     - lxml =4.9
     - moto =3
-    - mypy =1.0
+    - mypy =1.0.0
     - paho-mqtt =1.6
     - pandas =1.5
     - pre-commit =3.0
