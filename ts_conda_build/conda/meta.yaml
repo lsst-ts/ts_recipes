@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.9
+  version: 0.3.10
 
 requirements:
   build:
@@ -9,12 +9,12 @@ requirements:
   run:
     - astropy >=5
     - asynctest =0.13
-    - black =22
+    - black =23
     - boto3 =1.22
     - flake8 =4
     - jsonschema =3.2
     - moto =3
-    - mypy =0.991
+    - mypy =1.0.0
     - numpy {{ numpy }}
     - pre-commit =2.20
     - py =1

@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.15
+  version: 0.3.16
 
 requirements:
   run:
@@ -10,7 +10,7 @@ requirements:
     - astroplan =0.8
     - astroquery =0.4
     - asynctest =0.13
-    - black =22
+    - black =23
     - ephem =4.1
     - ginga =3.4
     - ipdb =0.13
@@ -23,12 +23,14 @@ requirements:
     - lsst-documenteer-pipelines =0.7
     - lxml =4.9
     - moto =3
-    - mypy =1.0
+    - mypy =1.0.0
+    - myst-parser =0.18
     - paho-mqtt =1.6
     - pandas =1.5
     - pre-commit =3.0
     - py =1
     - pylibftdi =0.20
+    - pymodbus =3.1
     - pyside2 =5.15
     - pyside6 =6.4
     - pytest =7
@@ -42,6 +44,8 @@ requirements:
     - qasync =0.23
     - rubin-env >=0.7
     - setuptools_scm =7.0
+    - sshtunnel =0.4
+    - sphinx-jsonschema =1.19
     - types-pyyaml =6.0
     - wget =1.20
     - zaber-serial =0.9
