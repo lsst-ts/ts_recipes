@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.19
+  version: 0.3.18
 
 requirements:
   run:
@@ -10,7 +10,6 @@ requirements:
     - astroplan =0.8
     - astroquery =0.4
     - asynctest =0.13
-    - bitarray =2.7
     - black =23
     - ephem =4.1
     - ginga =3.4
