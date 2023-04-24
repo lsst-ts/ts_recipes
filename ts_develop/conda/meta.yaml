@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.19
+  version: 0.3.20
 
 build:
   noarch: generic
@@ -26,7 +26,7 @@ requirements:
     - lsst-documenteer-pipelines =0.7
     - lxml =4.9
     - moto =3
-    - mypy =1.0.0
+    - mypy =1.2.0
     - myst-parser =0.18
     - paho-mqtt =1.6
     - pandas =1.5
