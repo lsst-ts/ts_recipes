@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.12
+  version: 0.3.13
 
 build:
   noarch: generic
@@ -17,7 +17,7 @@ requirements:
     - flake8 =4
     - jsonschema =3.2
     - moto =3
-    - mypy =1.0.0
+    - mypy =1.2.0
     - numpy {{ numpy }}
     - pre-commit =2.20
     - py =1
