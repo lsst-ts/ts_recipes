@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.20
+  version: 0.3.21
 
 build:
   noarch: generic
@@ -30,6 +30,7 @@ requirements:
     - myst-parser =0.18
     - paho-mqtt =1.6
     - pandas =1.5
+    - parameterized =0.9
     - pre-commit =3.0
     - py =1
     - pylibftdi =0.20
@@ -52,4 +53,5 @@ requirements:
     - ts-pre-commit-config =0.4
     - types-pyyaml =6.0
     - wget =1.20
+    - yamllint =1.31
     - zaber-serial =0.9
