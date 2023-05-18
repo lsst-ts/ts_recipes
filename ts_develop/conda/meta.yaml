@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.20
+  version: 0.3.21
 
 build:
   noarch: generic
@@ -12,6 +12,7 @@ requirements:
     - aioserial =1.3
     - astroplan =0.8
     - astroquery =0.4
+    - asyncqt =0.8
     - asynctest =0.13
     - black =23
     - ephem =4.1
