@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.13
+  version: 0.3.14
 
 build:
   noarch: generic
@@ -30,7 +30,7 @@ requirements:
     - pytest-tornasync =0.6
     - python {{ python }}
     - pyyaml =6.0
-    - setuptools =65
-    - setuptools_scm =7.0
+    - setuptools =62
+    - setuptools_scm =6.4
     - ts-pre-commit-config =0.4
     - types-pyyaml =6.0
