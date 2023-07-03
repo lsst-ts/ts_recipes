@@ -30,6 +30,6 @@ requirements:
     - pytest-tornasync =0.6
     - python {{ python }}
     - pyyaml =6.0
-    - setuptools =62
-    - setuptools_scm =6.4
+    - setuptools {{ setuptools }}.*
+    - setuptools_scm {{ setuptools_scm }}.*
     - types-pyyaml =6.0
