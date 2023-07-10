@@ -17,14 +17,15 @@ c_version=1.20.1
 python_version=1.21.0
 
 echo "Download and unpack labjack-ljm C library labjack_ljm_software_${file_version}_${arch}.tar.gz"
-curl -O https://labjack.com/sites/default/files/software/labjack_ljm_software_${file_version}_${arch}.tar.gz
-curl -O https://labjack.com/sites/default/files/software/Python_LJM_${python_file_version}.zip
+# Notice the strange file extension. Unfortunately it has been uploaded like that.
+curl https://cdn.docsie.io/file/workspace_u4AEu22YJT50zKF8J/doc_VDWGWsJAhd453cYSI/boo_9BFzMKFachlhscG9Z/file_6ct0vbMEidvixvYCA/labjack_ljm_software_${file_version}_${arch}tar.gz -o labjack_ljm_software_${file_version}_${arch}.tar.gz
+curl -O https://cdn.docsie.io/file/workspace_u4AEu22YJT50zKF8J/doc_VDWGWsJAhd453cYSI/boo_KXghxr3Yqvg6QlfuD/file_5cXspLnLTSUkz2oPl/python_ljm_${python_file_version}.zip
 
 # labjack_ljm_installer.run creates a directory labjack_ljm_software
 # which includes setup.sh, the script that installs the library.
 # It hard-codes the destination, so run sed to patch it.
 tar -xzf labjack_ljm_software_${file_version}_${arch}.tar.gz
-unzip Python_LJM_${python_file_version}.zip
+unzip python_ljm_${python_file_version}.zip
 
 cd labjack_ljm_software_${file_version}_${arch}
 ./labjack_ljm_installer.run --keep --noexec
