@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.22
+  version: 0.3.23
 
 build:
   noarch: generic
@@ -34,6 +34,8 @@ requirements:
     - parameterized =0.9
     - pre-commit =3.0
     - py =1
+    - pyaudio =0.2
+    - pydub =0.25
     - pylibftdi =0.20
     - pymodbus =3.1
     - pyside2 =5.15
@@ -50,6 +52,7 @@ requirements:
     - setuptools_scm =7.0
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
+    - tornado =6.3
     - ts-pre-commit-config =0.4
     - types-pyyaml =6.0
     - wget =1.20

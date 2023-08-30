@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.15
+  version: 0.3.16
 
 build:
   noarch: generic
@@ -21,6 +21,8 @@ requirements:
     - numpy {{ numpy }}
     - pre-commit =2.20
     - py =1
+    - pyaudio =0.2
+    - pydub =0.25
     - pytest =7
     - pytest-asyncio =0.20
     - pytest-black =0.3
@@ -32,4 +34,5 @@ requirements:
     - pyyaml =6.0
     - setuptools {{ setuptools }}.*
     - setuptools_scm {{ setuptools_scm }}.*
+    - tornado =6.3
     - types-pyyaml =6.0
