@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.23
+  version: 0.3.24
 
 build:
   noarch: generic
@@ -27,7 +27,7 @@ requirements:
     - lsst-documenteer-pipelines =0.7
     - lxml =4.9
     - moto =3
-    - mypy =1.2.0
+    - mypy =1.5.1
     - myst-parser =0.18
     - paho-mqtt =1.6
     - pandas =1.5
@@ -53,7 +53,7 @@ requirements:
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
     - tornado =6.3
-    - ts-pre-commit-config =0.4
+    - ts-pre-commit-config =0.6
     - types-pyyaml =6.0
     - wget =1.20
     - yamllint =1.31
