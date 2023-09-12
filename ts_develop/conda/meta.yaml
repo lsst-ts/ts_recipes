@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.24
+  version: 0.3.25
 
 build:
   noarch: generic
@@ -32,7 +32,7 @@ requirements:
     - paho-mqtt =1.6
     - pandas =1.5
     - parameterized =0.9
-    - pre-commit =3.0
+    - pre-commit =3.4
     - py =1
     - pyaudio =0.2
     - pydub =0.25
@@ -41,8 +41,6 @@ requirements:
     - pyside2 =5.15
     - pytest =7
     - pytest-asyncio =0.20
-    - pytest-black =0.3
-    - pytest-mypy =0.8
     - pytest-tornasync =0.6
     - pytest-qt =4.2
     - pytest-xvfb =2.0
@@ -53,7 +51,7 @@ requirements:
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
     - tornado =6.3
-    - ts-pre-commit-config =0.6
+    - ts-pre-commit-config =0.7
     - types-pyyaml =6.0
     - wget =1.20
     - yamllint =1.31
