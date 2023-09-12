@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.16
+  version: 0.3.17
 
 build:
   noarch: generic
@@ -14,25 +14,22 @@ requirements:
     - asynctest =0.13
     - black =23
     - boto3 =1.22
-    - flake8 =4
+    - flake8 =6
     - jsonschema =3.2
     - moto =3
-    - mypy =1.2.0
+    - mypy =1.5.1
     - numpy {{ numpy }}
-    - pre-commit =2.20
+    - pre-commit =3.4
     - py =1
     - pyaudio =0.2
     - pydub =0.25
     - pytest =7
     - pytest-asyncio =0.20
-    - pytest-black =0.3
     - pytest-cov =3.0
-    - pytest-flake8 =1.0
-    - pytest-mypy =0.8
     - pytest-tornasync =0.6
     - python {{ python }}
-    - pyyaml =6.0
+    - pyyaml =6
     - setuptools {{ setuptools }}.*
     - setuptools_scm {{ setuptools_scm }}.*
     - tornado =6.3
-    - types-pyyaml =6.0
+    - types-pyyaml =6
