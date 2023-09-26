@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.25
+  version: 0.3.26
 
 build:
   noarch: generic
@@ -51,7 +51,7 @@ requirements:
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
     - tornado =6.3
-    - ts-pre-commit-config =0.7
+    - ts-pre-commit-config =0.*
     - types-pyyaml =6.0
     - wget =1.20
     - yamllint =1.31
