@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.26
+  version: 0.3.27
 
 build:
   noarch: generic
@@ -16,6 +16,7 @@ requirements:
     - asynctest =0.13
     - black =23
     - ephem =4.1
+    - ffmpeg =6
     - ginga =3.4
     - ipdb =0.13
     - ipympl =0.9
