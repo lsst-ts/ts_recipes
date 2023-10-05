@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.27
+  version: 0.3.28
 
 build:
   noarch: generic
@@ -38,7 +38,7 @@ requirements:
     - pyaudio =0.2
     - pydub =0.25
     - pylibftdi =0.20
-    - pymodbus =3.1
+    - pymodbus =3.5
     - pyside2 =5.15
     - pytest =7
     - pytest-asyncio =0.20
