@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.28
+  version: 0.3.29
 
 build:
   noarch: generic
@@ -14,6 +14,7 @@ requirements:
     - astroquery =0.4
     - asyncqt =0.8
     - asynctest =0.13
+    - bitarray =2.8.2
     - black =23
     - ephem =4.1
     - ffmpeg =6
