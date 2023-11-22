@@ -1,0 +1,65 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: rubin-scheduler
+  version: {{ data.get('version') }}
+
+source:
+  git_url: https://github.com/lsst/rubin_scheduler
+  git_rev: {{ CONDA_BUILD_TAG }}
+
+build:
+  noarch: python  
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+
+test:
+  requires:
+    - pytest
+    - pytest-cov
+    - pytest-black
+    - black
+    - ruff
+    - isort
+    - astropy
+    - h5py
+    - healpy
+    - matplotlib
+    - numpy {{ numpy }}
+    - requests
+    - pytables
+    - shapely
+    - tqdm
+  source_files:
+    - rubin_scheduler
+    - tests
+    - pyproject.toml
+  commands:
+    - scheduler_download_data
+    - rs_download_sky
+    - pytest -vsx
+
+requirements:
+  host:
+    - python {{ python }}
+    - pip
+    - setuptools_scm_git_archive
+    - setuptools {{ setuptools }}
+    - setuptools_scm {{ setuptools_scm }}
+  build:
+    - python {{ python }}
+    - pip
+    - setuptools_scm_git_archive
+    - setuptools {{ setuptools }}
+    - setuptools_scm {{ setuptools_scm }}
+    - numpy {{ numpy }}
+  run:
+    - python {{ python }}
+    - astropy
+    - h5py
+    - healpy
+    - matplotlib
+    - numpy {{ numpy }}
+    - pytables
+    - requests
+    - shapely
+    - tqdm
+    
