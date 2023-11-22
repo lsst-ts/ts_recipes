@@ -14,12 +14,15 @@ build:
 test:
   requires:
     - pytest
-    - pytest-flake8
     - pytest-cov
     - pytest-black
+    - black
+    - ruff
+    - isort
     - astroplan
     - astropy
     - colorcet
+    - cycler
     - h5py
     - healpy
     - matplotlib
@@ -32,14 +35,12 @@ test:
     - scikit-learn
     - scipy
     - sqlalchemy
-    - sqlite
     - shapely
     - skyfield
-    - tqdm
+    - rubin-scheduler
   source_files:
     - rubin_sim
     - tests
-    - setup.cfg
     - pyproject.toml
   commands:
     - rs_download_data
@@ -64,6 +65,7 @@ requirements:
     - astroplan
     - astropy
     - colorcet
+    - cycler
     - h5py
     - healpy
     - matplotlib
@@ -76,8 +78,8 @@ requirements:
     - scikit-learn
     - scipy
     - sqlalchemy
-    - sqlite
     - shapely
     - skyfield
-    - tqdm
+    - rubin-scheduler
+    
     
