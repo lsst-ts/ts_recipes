@@ -1,0 +1,74 @@
+{% set data= load_setup_py_data() %}
+package:
+  name: schedview
+  version: {{ data.get('version') }}
+
+source:
+  git_url: https://github.com/lsst/schedview
+  git_rev: {{ CONDA_BUILD_TAG }}
+
+build:
+  noarch: python  
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+
+test:
+  requires:
+    - pytest
+    - pytest-cov
+    - pytest-black
+    - black
+    - ruff
+    - isort
+    - python
+    - astropy
+    - bokeh >=3.1.1
+    - colorcet
+    - healpy
+    - holoviews
+    - hvplot
+    - numpy {{ numpy }}
+    - pandas
+    - panel >=1.1.0
+    - param
+    - pytz
+    - uranography
+    - rubin-scheduler
+  source_files:
+    - schedview
+    - tests
+    - pyproject.toml
+  commands:
+    - prenight
+    - scheduler_dashboard
+    - pytest -vsx
+
+requirements:
+  host:
+    - python {{ python }}
+    - pip
+    - setuptools_scm_git_archive
+    - setuptools {{ setuptools }}
+    - setuptools_scm {{ setuptools_scm }}
+  build:
+    - python {{ python }}
+    - pip
+    - setuptools_scm_git_archive
+    - setuptools {{ setuptools }}
+    - setuptools_scm {{ setuptools_scm }}
+    - numpy {{ numpy }}
+  run:
+    - python {{ python }}
+    - astropy
+    - bokeh >=3.1.1
+    - colorcet
+    - healpy
+    - holoviews
+    - hvplot
+    - numpy {{ numpy }}
+    - pandas
+    - panel >=1.1.0
+    - param
+    - pytz
+    - uranography
+    - rubin-scheduler
+    
