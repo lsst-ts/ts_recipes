@@ -20,12 +20,16 @@ test:
     - ruff
     - isort
     - astropy
+    - astroplan
     - h5py
     - healpy
     - matplotlib
     - numpy {{ numpy }}
+    - numexpr
     - requests
+    - pandas
     - pytables
+    - scipy
     - shapely
     - tqdm
   source_files:
@@ -54,12 +58,16 @@ requirements:
   run:
     - python {{ python }}
     - astropy
+    - astroplan
     - h5py
     - healpy
     - matplotlib
     - numpy {{ numpy }}
+    - numexpr
     - pytables
+    - pandas
     - requests
+    - scipy
     - shapely
     - tqdm
     
