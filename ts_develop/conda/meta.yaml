@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.29
+  version: 0.3.30
 
 build:
   noarch: generic
@@ -50,6 +50,7 @@ requirements:
     - qasync =0.23
     - rubin-env >=0.7
     - setuptools_scm =7.0
+    - slycot =0.*
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
     - tornado =6.3
