@@ -16,6 +16,7 @@ requirements:
     - asyncqt =0.8
     - asynctest =0.13
     - black =23
+    - control =0.9
     - ephem =4.1
     - ffmpeg =6
     - ginga =3.4
