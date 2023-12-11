@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.30
+  version: 0.3.31
 
 build:
   noarch: generic
@@ -27,6 +27,7 @@ requirements:
     - kafkit =0.2
     - lsst-documenteer-guide =0.7
     - lsst-documenteer-pipelines =0.7
+    - lsst-efd-client =0.*
     - lxml =4.9
     - moto =3
     - mypy =1.5.1
