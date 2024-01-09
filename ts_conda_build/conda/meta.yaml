@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.3.17
+  version: 0.3.18
 
 build:
   noarch: generic
@@ -14,6 +14,7 @@ requirements:
     - asynctest =0.13
     - black =23
     - boto3 =1.22
+    - fastapi =0.101
     - flake8 =6
     - jsonschema =3.2
     - moto =3
@@ -21,6 +22,8 @@ requirements:
     - numpy {{ numpy }}
     - pre-commit =3.4
     - py =1
+    - pydantic =2
+    - pydantic-settings =2
     - pyaudio =0.2
     - pydub =0.25
     - pytest =7
@@ -31,5 +34,8 @@ requirements:
     - pyyaml =6
     - setuptools {{ setuptools }}.*
     - setuptools_scm {{ setuptools_scm }}.*
+    - starlette =0.27
     - tornado =6.3
     - types-pyyaml =6
+    - uvicorn =0.24
+    - websockets =11
