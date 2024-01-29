@@ -12,12 +12,12 @@ requirements:
   run:
     - astropy >=5
     - asynctest =0.13
-    - black =23
+    - black =24
     - boto3 =1.22
     - flake8 =6
     - jsonschema =3.2
     - moto =3
-    - mypy =1.5.1
+    - mypy =1.8
     - numpy {{ numpy }}
     - pre-commit =3.4
     - py =1
