@@ -16,7 +16,7 @@ requirements:
     - astroquery =0.4
     - asyncqt =0.8
     - asynctest =0.13
-    - black =23
+    - black =24
     - control =0.9
     - ephem =4.1
     - fastapi =0.101
@@ -34,7 +34,7 @@ requirements:
     - lsst-efd-client =0.*
     - lxml =4.9
     - moto =3
-    - mypy =1.5.1
+    - mypy =1.8
     - myst-parser =0.18
     - paho-mqtt =1.6
     - pandas =2
