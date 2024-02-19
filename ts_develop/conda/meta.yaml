@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.34
+  version: 0.3.35
 
 build:
   noarch: generic
@@ -16,6 +16,7 @@ requirements:
     - astroquery =0.4
     - asyncqt =0.8
     - asynctest =0.13
+    - batoid =0.6
     - black =24
     - control =0.9
     - ephem =4.1
