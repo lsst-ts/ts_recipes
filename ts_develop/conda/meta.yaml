@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.3.35
+  version: 0.3.36
 
 build:
   noarch: generic
@@ -14,6 +14,7 @@ requirements:
     - asgi-lifespan =2
     - astroplan =0.9
     - astroquery =0.4
+    - asyncpg =0.29
     - asyncqt =0.8
     - asynctest =0.13
     - batoid =0.6
@@ -40,7 +41,9 @@ requirements:
     - paho-mqtt =1.6
     - pandas =2
     - parameterized =0.9
+    - postgresql =16
     - pre-commit =3.4
+    - psycopg =3.1
     - py =1
     - pyaudio =0.2
     - pydantic =2
@@ -52,6 +55,7 @@ requirements:
     - pytest =7
     - pytest-asyncio =0.20
     - pytest-tornasync =0.6
+    - pytest-postgresql =5.1
     - pytest-qt =4.2
     - pytest-xvfb =2.0
     - python-confluent-kafka =1.9
