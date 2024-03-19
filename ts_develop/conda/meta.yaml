@@ -19,6 +19,7 @@ requirements:
     - batoid =0.6
     - black =24
     - control =0.9
+    - danish =0.*
     - ephem =4.1
     - fastapi =0.110
     - ffmpeg =6
