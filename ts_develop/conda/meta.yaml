@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.0
+  version: 0.4.1
 
 build:
   noarch: generic
@@ -72,4 +72,5 @@ requirements:
     - websockets =12
     - wget =1.20
     - yamllint =1.35
+    - zaber-motion =5.1
     - zaber-serial =0.9
