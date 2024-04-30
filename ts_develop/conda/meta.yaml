@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.1
+  version: 0.4.2
 
 build:
   noarch: generic
@@ -19,7 +19,13 @@ requirements:
     - batoid =0.6
     - black =24
     - control =0.9
-    - danish =0.*
+    - danish =0
+    - documenteer =0.8.2
+    # Here are the subpackages for documenteer
+    # Out of order because easier to heirarchize
+    - lsst-documenteer-pipelines
+    - lsst-documenteer-guide
+    - lsst-documenteer-technote
     - ephem =4.1
     - fastapi =0.110
     - ffmpeg =6
@@ -30,13 +36,10 @@ requirements:
     - jupyter =1
     - kafkacat =1.7
     - kafkit =0.2
-    - lsst-documenteer-guide =0.7
-    - lsst-documenteer-pipelines =0.7
     - lsst-efd-client =0.*
     - lxml =5
     - moto =5
     - mypy =1.9
-    - myst-parser =2.0
     - paho-mqtt =1.6
     - pandas =2
     - parameterized =0.9
@@ -63,9 +66,10 @@ requirements:
     - setuptools_scm =8.0
     - slycot =0.*
     - sshtunnel =0.4
+    - sphinx =5
     - sphinx-jsonschema =1.19
     - tornado =6.4
-    - ts-pre-commit-config =0.*
+    - ts-pre-commit-config =0
     - types-pyyaml =6.0
     - types-python-dateutil =2
     - uvicorn =0.28
