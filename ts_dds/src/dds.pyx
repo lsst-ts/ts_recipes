@@ -61,14 +61,14 @@ def localThreadCleanupList():
 class CleanupContext:
     def __init__(self):
         pass
-    
+
     def __enter__(self):
         # if vars are not initialized, then set them
         if not localThreadCleanupInitialized():
             localThreadCleanup.count = 0
             localThreadCleanup.list = None
             localThreadCleanup.initialized = True
-        
+
         if localThreadCleanup.count == 0:
             localThreadCleanup.list = []
         localThreadCleanup.count += 1
@@ -323,7 +323,7 @@ class DurabilityQosPolicy(QosPolicy):
         '''
         QosPolicy.__init__(self, QosPolicyId.DURABILITY_QOS_POLICY_ID)
         self._kind = kind
-    
+
     @staticmethod
     def get_from_cqos(Qos q):
         cdef dds.dds_durability_kind_t kind
@@ -331,7 +331,7 @@ class DurabilityQosPolicy(QosPolicy):
         return DurabilityQosPolicy(DDSDurabilityKind(kind))
 
     def set_onto_cqos(self, Qos q):
-        dds.dds_qset_durability(q.handle(), self.kind.value) 
+        dds.dds_qset_durability(q.handle(), self.kind.value)
 
 
 class HistoryQosPolicy(QosPolicy):
@@ -364,7 +364,7 @@ class HistoryQosPolicy(QosPolicy):
 
     def set_onto_cqos(self, Qos q):
         dds.dds_qset_history(q.handle(), self.kind.value, self.depth)
-    
+
 
 class ResourceLimitsQosPolicy(QosPolicy):
     '''
@@ -410,11 +410,11 @@ class ResourceLimitsQosPolicy(QosPolicy):
 
         return ResourceLimitsQosPolicy(max_samples, max_instances,
             max_samples_per_instance)
-    
+
     def set_onto_cqos(self, Qos q):
         dds.dds_qset_resource_limits(q.handle(), self.max_samples,
                                          self.max_instances, self.max_samples_per_instance)
-    
+
 
 class PresentationQosPolicy(QosPolicy):
     '''
@@ -463,7 +463,7 @@ class PresentationQosPolicy(QosPolicy):
         dds.dds_qset_presentation(q.handle(), self.kind.value,
                                     int(self.coherent_access), int(self.ordered_access))
 
-    
+
 
 class LifespanQosPolicy(QosPolicy):
     '''
@@ -553,7 +553,7 @@ class OwnershipQosPolicy(QosPolicy):
     def __init__(self, kind=DDSOwnershipKind.SHARED):
         QosPolicy.__init__(self, QosPolicyId.OWNERSHIP_QOS_POLICY_ID)
         self._kind = kind
-    
+
     @staticmethod
     def get_from_cqos(Qos q):
         cdef dds.dds_ownership_kind kind
@@ -672,9 +672,9 @@ class PartitionQosPolicy(QosPolicy):
         else:
             for i in range(0, num_pars):
                 python_par_list.append(par_list[i].decode(DDS_STRING_ENCODING))
-        
+
         return PartitionQosPolicy(python_par_list)
-    
+
     def set_onto_cqos(self, Qos q):
         cdef char **_c_partitions = NULL
         partitions = self.ps
@@ -740,7 +740,7 @@ class TransportPriorityQosPolicy(QosPolicy):
         cdef int32_t value
         dds.dds_qget_transport_priority(q.handle(), &value)
         return TransportPriorityQosPolicy(value)
-    
+
     def set_onto_cqos(self, Qos q):
         dds.dds_qset_transport_priority(q.handle(), self.value)
 
@@ -764,7 +764,7 @@ class DestinationOrderQosPolicy(QosPolicy):
 
     def set_onto_cqos(self, Qos q):
         dds.dds_qset_destination_order(q.handle(), self.kind.value)
-    
+
 class WriterDataLifecycleQosPolicy(QosPolicy):
     '''
     Writer data lifecycle QoS Policy
@@ -905,7 +905,7 @@ class DurabilityServiceQosPolicy(QosPolicy):
             &max_samples,
             &max_instances,
             &max_samples_per_instance)
-        
+
         return DurabilityServiceQosPolicy(DDSDuration(0, service_cleanup_delay),
             DDSHistoryKind(history_kind),
             history_depth,
@@ -935,7 +935,7 @@ class UserdataQosPolicy(QosPolicy):
     @property
     def value(self):
         return self._value
-    
+
     @staticmethod
     def get_from_cqos(Qos q):
         cdef char *value
@@ -1038,7 +1038,7 @@ class GroupdataQosPolicy(QosPolicy):
             dds.dds_qset_groupdata(q.handle(), <const void *> _c_xxxdata_value, _c_xxxdata_length) #gil_ok
 
 # The QoS wrapper.
-cdef class Qos: 
+cdef class Qos:
     '''
     QoS class
 
@@ -1086,7 +1086,7 @@ cdef class Qos:
     @property
     def userdata(self):
         return UserdataQosPolicy.get_from_cqos(self)
-    
+
     @userdata.setter
     def userdata(self, user_data):
         user_data.set_onto_cqos(self)
@@ -1094,7 +1094,7 @@ cdef class Qos:
     @property
     def topicdata(self):
         return TopicdataQosPolicy.get_from_cqos(self)
-    
+
     @topicdata.setter
     def topicdata(self, topic_data):
         topic_data.set_onto_cqos(self)
@@ -1110,7 +1110,7 @@ cdef class Qos:
     @property
     def durability(self):
         return DurabilityQosPolicy.get_from_cqos(self)
-    
+
     @durability.setter
     def durability(self, d):
         d.set_onto_cqos(self)
@@ -1134,15 +1134,15 @@ cdef class Qos:
     @property
     def deadline(self):
         return DeadlineQosPolicy.get_from_cqos(self)
-    
+
     @deadline.setter
     def deadline(self, d):
         d.set_onto_cqos(self)
-    
+
     @property
     def latency_budget(self):
         return LatencyBudgetQosPolicy.get_from_cqos(self)
-    
+
     @latency_budget.setter
     def latency_budget(self, l):
         l.set_onto_cqos(self)
@@ -1158,15 +1158,15 @@ cdef class Qos:
     @property
     def ownership_strength(self):
         return OwnershipStrengthQosPolicy.get_from_cqos(self)
-    
+
     @ownership_strength.setter
     def ownership_strength(self, o):
         o.set_onto_cqos(self)
-    
+
     @property
     def liveliness(self):
         return LivelinessQosPolicy.get_from_cqos(self)
-    
+
     @liveliness.setter
     def liveliness(self, l):
         l.set_onto_cqos(self)
@@ -1186,15 +1186,15 @@ cdef class Qos:
     @partition.setter
     def partition(self, p):
         p.set_onto_cqos(self)
-    
+
     @property
     def reliability(self):
         return ReliabilityQosPolicy.get_from_cqos(self)
-    
+
     @reliability.setter
     def reliability(self, r):
         r.set_onto_cqos(self)
-    
+
     @property
     def transport_priority(self):
         return TransportPriorityQosPolicy.get_from_cqos(self)
@@ -1206,7 +1206,7 @@ cdef class Qos:
     @property
     def lifespan(self):
         return LifespanQosPolicy.get_from_cqos(self)
-    
+
     @lifespan.setter
     def lifespan(self, l):
         l.set_onto_cqos(self)
@@ -1214,7 +1214,7 @@ cdef class Qos:
     @property
     def destination_order(self):
         return DestinationOrderQosPolicy.get_from_cqos(self)
-    
+
     @destination_order.setter
     def destination_order(self, d):
         d.set_onto_cqos(self)
@@ -1230,7 +1230,7 @@ cdef class Qos:
     @property
     def resource_limits(self):
         return ResourceLimitsQosPolicy.get_from_cqos(self)
-    
+
     @resource_limits.setter
     def resource_limits(self, r):
         r.set_onto_cqos(self)
@@ -1238,7 +1238,7 @@ cdef class Qos:
     @property
     def writer_data_lifecycle(self):
         return WriterDataLifecycleQosPolicy.get_from_cqos(self)
-    
+
     @writer_data_lifecycle.setter
     def writer_data_lifecycle(self, w):
         w.set_onto_cqos(self)
@@ -1496,7 +1496,7 @@ cdef class Entity(object):
     '''
     cdef dds.dds_entity_t _c_handle
     cdef object _parent
-    cdef object _listener    
+    cdef object _listener
 
     def __cinit__(self):
         self._c_handle = NULL
@@ -1892,7 +1892,7 @@ cdef uint32_t _status_mask_for_listener(object listener):
     return mask
 
 # Implementation of the Listener callback routines. Currently only the on_data_available is implemented
-cdef void on_inconsistent_topic (dds_entity_t topic, dds.dds_inconsistent_topic_status_t * status) with gil:
+cdef void on_inconsistent_topic (dds_entity_t topic, dds.dds_inconsistent_topic_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(topic)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1902,7 +1902,7 @@ cdef void on_inconsistent_topic (dds_entity_t topic, dds.dds_inconsistent_topic_
         if listener:
             listener.on_inconsistent_topic(entity,InconsistentTopicStatus(total_count, total_count_change))
 
-cdef void on_offered_deadline_missed (dds_entity_t writer, dds_offered_deadline_missed_status_t * status) with gil:
+cdef void on_offered_deadline_missed (dds_entity_t writer, dds_offered_deadline_missed_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(writer)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1913,7 +1913,7 @@ cdef void on_offered_deadline_missed (dds_entity_t writer, dds_offered_deadline_
         if listener:
             listener.on_offered_deadline_missed(entity,OfferedDeadlineMissedStatus(total_count, total_count_change, last_instance_handle))
 
-cdef void on_offered_incompatible_qos (dds_entity_t writer, dds_offered_incompatible_qos_status_t * status) with gil:
+cdef void on_offered_incompatible_qos (dds_entity_t writer, dds_offered_incompatible_qos_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(writer)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1924,7 +1924,7 @@ cdef void on_offered_incompatible_qos (dds_entity_t writer, dds_offered_incompat
         if listener:
             listener.on_offered_incompatible_qos(entity,OfferedIncompatibleQosStatus(total_count, total_count_change, QosPolicyId(last_policy_id)))
 
-cdef void on_liveliness_lost (dds_entity_t writer, dds_liveliness_lost_status_t * status) with gil:
+cdef void on_liveliness_lost (dds_entity_t writer, dds_liveliness_lost_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(writer)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1934,7 +1934,7 @@ cdef void on_liveliness_lost (dds_entity_t writer, dds_liveliness_lost_status_t 
         if listener:
             listener.on_liveliness_lost(entity,LivelinessLostStatus(total_count, total_count_change))
 
-cdef void on_publication_matched (dds_entity_t writer, dds_publication_matched_status_t * status) with gil:
+cdef void on_publication_matched (dds_entity_t writer, dds_publication_matched_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(writer)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1947,7 +1947,7 @@ cdef void on_publication_matched (dds_entity_t writer, dds_publication_matched_s
         if listener:
             listener.on_publication_matched(entity,PublicationMatchedStatus(total_count, total_count_change, current_count, current_count_change, last_subscription_handle))
 
-cdef void on_requested_deadline_missed (dds_entity_t reader, dds_requested_deadline_missed_status_t * status) with gil:
+cdef void on_requested_deadline_missed (dds_entity_t reader, dds_requested_deadline_missed_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1958,7 +1958,7 @@ cdef void on_requested_deadline_missed (dds_entity_t reader, dds_requested_deadl
         if listener:
             listener.on_requested_deadline_missed(entity,RequestedDeadlineMissedStatus(total_count, total_count_change, last_instance_handle))
 
-cdef void on_requested_incompatible_qos (dds_entity_t reader, dds_requested_incompatible_qos_status_t * status) with gil:
+cdef void on_requested_incompatible_qos (dds_entity_t reader, dds_requested_incompatible_qos_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1969,7 +1969,7 @@ cdef void on_requested_incompatible_qos (dds_entity_t reader, dds_requested_inco
         if listener:
             listener.on_requested_incompatible_qos(entity,RequestedIncompatibleQosStatus(total_count, total_count_change, QosPolicyId(last_policy_id)))
 
-cdef void on_sample_rejected (dds_entity_t reader, dds_sample_rejected_status_t * status) with gil:
+cdef void on_sample_rejected (dds_entity_t reader, dds_sample_rejected_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -1982,7 +1982,7 @@ cdef void on_sample_rejected (dds_entity_t reader, dds_sample_rejected_status_t 
             listener.on_sample_rejected(entity,SampleRejectedStatus(total_count, total_count_change,
                                                          DDSSampleRejectedStatusKind(last_reason), last_instance_handle))
 
-cdef void on_liveliness_changed (dds_entity_t reader, dds_liveliness_changed_status_t * status) with gil:
+cdef void on_liveliness_changed (dds_entity_t reader, dds_liveliness_changed_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t alive_count = status.alive_count
     cdef uint32_t not_alive_count = status.not_alive_count
@@ -1995,7 +1995,7 @@ cdef void on_liveliness_changed (dds_entity_t reader, dds_liveliness_changed_sta
         if listener:
             listener.on_liveliness_changed(entity,LivelinessChangedStatus(alive_count,not_alive_count,alive_count_change,not_alive_count_change,last_publication_handle))
 
-cdef void on_data_available (dds_entity_t reader) with gil:
+cdef void on_data_available (dds_entity_t reader) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
 
     if entity:
@@ -2003,7 +2003,7 @@ cdef void on_data_available (dds_entity_t reader) with gil:
         if listener:
             listener.on_data_available(entity)
 
-cdef void on_subscription_matched (dds_entity_t reader, dds_subscription_matched_status_t * status) with gil:
+cdef void on_subscription_matched (dds_entity_t reader, dds_subscription_matched_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -2016,7 +2016,7 @@ cdef void on_subscription_matched (dds_entity_t reader, dds_subscription_matched
         if listener:
             listener.on_subscription_matched(entity,SubscriptionMatchedStatus(total_count, total_count_change, current_count, current_count_change, last_publication_handle))
 
-cdef void on_sample_lost (dds_entity_t reader, dds_sample_lost_status_t * status) with gil:
+cdef void on_sample_lost (dds_entity_t reader, dds_sample_lost_status_t * status) noexcept with gil:
     cdef object entity = _entity_register_find(reader)
     cdef uint32_t total_count = status.total_count
     cdef int32_t total_count_change = status.total_count_change
@@ -2026,7 +2026,7 @@ cdef void on_sample_lost (dds_entity_t reader, dds_sample_lost_status_t * status
         if listener:
             listener.on_sample_lost(entity,SampleLostStatus(total_count, total_count_change))
 
-cdef void on_data_on_readers (dds_entity_t subscriber) with gil:
+cdef void on_data_on_readers (dds_entity_t subscriber) noexcept with gil:
     cdef object entity = _entity_register_find(subscriber)
 
     if entity:
@@ -2222,7 +2222,7 @@ cdef class DomainParticipant(Entity):
             return _FoundTopic_Init(self, c_topic)
         else:
             return None
-    
+
     def create_topic(self, str name, topic_data, Qos qos = None, listener = None):
         '''create_topic(str name, topic_data, Qos qos = None, listener = None)
         Create a topic
