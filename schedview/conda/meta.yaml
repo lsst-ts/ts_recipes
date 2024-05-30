@@ -1,10 +1,10 @@
 {% set data= load_setup_py_data() %}
 package:
-  name: rubin-sim
+  name: schedview
   version: {{ data.get('version') }}
 
 source:
-  git_url: https://github.com/lsst/rubin_sim
+  git_url: https://github.com/lsst/schedview
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
@@ -19,31 +19,27 @@ test:
     - black
     - ruff
     - isort
-    - astroplan
+    - python
     - astropy
+    - bokeh >=3.1.1
     - colorcet
-    - cycler
-    - h5py
     - healpy
-    - matplotlib
+    - holoviews
+    - hvplot
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
-    - palpy
     - pandas
-    - pytables
-    - scikit-learn
-    - scipy
-    - sqlalchemy
-    - shapely
-    - skyfield
+    - panel >=1.1.0
+    - param
+    - pytz
+    - uranography
     - rubin-scheduler
   source_files:
-    - rubin_sim
+    - schedview
     - tests
     - pyproject.toml
   commands:
-    - rs_download_data
+    - prenight
+    - scheduler_dashboard
     - pytest -vsx
 
 requirements:
@@ -62,24 +58,17 @@ requirements:
     - numpy {{ numpy }}
   run:
     - python {{ python }}
-    - astroplan
     - astropy
+    - bokeh >=3.1.1
     - colorcet
-    - cycler
-    - h5py
     - healpy
-    - matplotlib
+    - holoviews
+    - hvplot
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
-    - palpy
     - pandas
-    - pytables
-    - scikit-learn
-    - scipy
-    - sqlalchemy
-    - shapely
-    - skyfield
+    - panel >=1.1.0
+    - param
+    - pytz
+    - uranography
     - rubin-scheduler
-    
     
