@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.3
+  version: 0.4.4
 
 build:
   noarch: generic
@@ -19,6 +19,7 @@ requirements:
     - batoid =0.6
     - black =24
     - control =0.9
+    - crcmod =1.7
     - danish =0
     - documenteer =0.8.2
     # Here are the subpackages for documenteer
@@ -31,6 +32,7 @@ requirements:
     - ffmpeg =6
     - ginga =4.0
     - httpx =0.27
+    - intelhex =2.3.0
     - ipdb =0.13
     - ipympl =0.9
     - jupyter =1
