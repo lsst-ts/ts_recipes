@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.4.1
+  version: 0.4.2
 
 build:
   noarch: generic
@@ -20,7 +20,7 @@ requirements:
     - numpy {{ numpy }}
     - pre-commit =3.6
     - py =1
-    - pytest =8
+    - pytest =8.1
     - pytest-asyncio =0.23
     - pytest-cov =4.1
     - python {{ python }}
