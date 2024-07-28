@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.6
+  version: 0.4.7
 
 build:
   noarch: generic
@@ -16,7 +16,7 @@ requirements:
     - asyncpg =0.29
     - asyncqt =0.8
     - asynctest =0.13
-    - batoid =0.6
+    - batoid =0.7
     - black =24
     - control =0.9
     - crcmod =1.7
@@ -41,7 +41,7 @@ requirements:
     - lsst-efd-client =0.*
     - lxml =5
     - moto =5
-    - mypy =1.9
+    - mypy =1.11
     - paho-mqtt =1.6
     - pandas =2
     - parameterized =0.9
