@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.7
+  version: 0.4.8
 
 build:
   noarch: generic
@@ -56,7 +56,6 @@ requirements:
     - pylibftdi =0.20
     - pymodbus =3.6
     - pysnmp =4.4
-    - pyside2 =5.15
     - pyside6 =6.7
     - pytest =8
     - pytest-asyncio =0.23
