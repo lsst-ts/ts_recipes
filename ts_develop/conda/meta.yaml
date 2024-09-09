@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.8
+  version: 0.4.9
 
 build:
   noarch: generic
@@ -69,6 +69,7 @@ requirements:
     - rubin-env >=0.7
     - setuptools_scm =8.0
     - slycot =0.*
+    - smbus3 =0.5
     - sshtunnel =0.4
     - sphinx =5
     - sphinx-jsonschema =1.19
