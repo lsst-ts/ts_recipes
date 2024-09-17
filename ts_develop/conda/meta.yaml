@@ -66,7 +66,7 @@ requirements:
     - python-confluent-kafka =1.9
     - qasync =0.27
     - qt6-charts =6.7
-    - rubin-env >=0.7
+    - rubin-env >=9
     - setuptools_scm =8.0
     - slycot =0.*
     - smbus3 =0.5
