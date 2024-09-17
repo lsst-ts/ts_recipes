@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.9
+  version: 0.4.10
 
 build:
   noarch: generic
@@ -80,7 +80,7 @@ requirements:
     - types-python-dateutil =2
     - uvicorn =0.28
     - websockets =12
-    - wget =1.20
+    - wget =1.21
     - yamllint =1.35
     - zaber-motion =5.1
     - zaber-serial =0.9
