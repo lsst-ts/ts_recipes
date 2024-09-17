@@ -30,7 +30,7 @@ requirements:
     - ephem =4.1
     - fastapi =0.110
     - ffmpeg =6
-    - ginga =4.0
+    - ginga =5.0
     - httpx =0.27
     - intelhex =2.3.0
     - ipdb =0.13
