@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.9
+  version: 0.4.10
 
 build:
   noarch: generic
@@ -45,6 +45,7 @@ requirements:
     - paho-mqtt =1.6
     - pandas =2
     - parameterized =0.9
+    - pigpio =1.78
     - postgresql =16
     - pre-commit =3.6
     - psycopg =3.1
@@ -64,6 +65,7 @@ requirements:
     - pytest-qt =4.4
     - pytest-xvfb =3.0
     - python-confluent-kafka =1.9
+    - python-sounddevice =0.5
     - qasync =0.27
     - qt6-charts =6.7
     - rubin-env >=0.7
