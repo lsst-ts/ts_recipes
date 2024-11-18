@@ -8,8 +8,12 @@ source:
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
-  noarch: python  
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - prenight = schedview.app.prenight.prenight:main
+    - scheduler_dashboard = schedview.app.scheduler_dashboard.scheduler_dashboard:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 test:
   requires:
@@ -19,20 +23,24 @@ test:
     - black
     - ruff
     - isort
-    - python
-    - astropy
+    - python 
+    - astropy >=5.3
     - bokeh >=3.1.1
     - colorcet
     - healpy
     - holoviews
     - hvplot
+    - matplotlib
     - numpy {{ numpy }}
     - pandas
     - panel >=1.1.0
     - param
     - pytz
-    - uranography
+    - pyyaml
+    - skyproj
+    - uranography >=1.1.0
     - rubin-scheduler
+    - rubin-sim >=2
   source_files:
     - schedview
     - tests
@@ -58,17 +66,20 @@ requirements:
     - numpy {{ numpy }}
   run:
     - python {{ python }}
-    - astropy
+    - astropy >=5.3
     - bokeh >=3.1.1
     - colorcet
     - healpy
     - holoviews
     - hvplot
+    - matplotlib
     - numpy {{ numpy }}
     - pandas
     - panel >=1.1.0
     - param
     - pytz
-    - uranography
-    - rubin-scheduler
-    
+    - pyyaml
+    - skyproj
+    - uranography >=1.1.0
+    - rubin-scheduler >=3
+    - rubin-sim >=2

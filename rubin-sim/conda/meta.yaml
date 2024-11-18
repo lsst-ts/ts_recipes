@@ -66,20 +66,22 @@ requirements:
     - astropy
     - colorcet
     - cycler
+    - george
     - h5py
     - healpy
     - matplotlib
     - numpy {{ numpy }}
     - openorb
     - openorb-data-de405
-    - palpy
     - pandas
+    - pyarrow
     - pytables
     - scikit-learn
     - scipy
     - sqlalchemy
     - shapely
     - skyfield
+    - skyproj
     - rubin-scheduler
     
     

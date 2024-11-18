@@ -8,8 +8,13 @@ source:
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
-  noarch: python  
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - scheduler_download_data = rubin_scheduler.data.scheduler_download_data:scheduler_download_data
+    - rs_download_sky = rubin_scheduler.data.rs_download_sky:rs_download_sky
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
 
 test:
   requires:
@@ -59,6 +64,8 @@ requirements:
     - python {{ python }}
     - astropy
     - astroplan
+    - conda
+    - gitpython
     - h5py
     - healpy
     - matplotlib
