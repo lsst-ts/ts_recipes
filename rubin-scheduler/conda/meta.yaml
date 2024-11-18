@@ -1,15 +1,20 @@
 {% set data= load_setup_py_data() %}
 package:
-  name: rubin-sim
+  name: rubin-scheduler
   version: {{ data.get('version') }}
 
 source:
-  git_url: https://github.com/lsst/rubin_sim
+  git_url: https://github.com/lsst/rubin_scheduler
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
-  noarch: python  
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - scheduler_download_data = rubin_scheduler.data.scheduler_download_data:scheduler_download_data
+    - rs_download_sky = rubin_scheduler.data.rs_download_sky:rs_download_sky
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
 
 test:
   requires:
@@ -19,31 +24,26 @@ test:
     - black
     - ruff
     - isort
-    - astroplan
     - astropy
-    - colorcet
-    - cycler
+    - astroplan
     - h5py
     - healpy
     - matplotlib
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
-    - palpy
+    - numexpr
+    - requests
     - pandas
     - pytables
-    - scikit-learn
     - scipy
-    - sqlalchemy
     - shapely
-    - skyfield
-    - rubin-scheduler
+    - tqdm
   source_files:
-    - rubin_sim
+    - rubin_scheduler
     - tests
     - pyproject.toml
   commands:
-    - rs_download_data
+    - scheduler_download_data
+    - rs_download_sky
     - pytest -vsx
 
 requirements:
@@ -62,26 +62,19 @@ requirements:
     - numpy {{ numpy }}
   run:
     - python {{ python }}
-    - astroplan
     - astropy
-    - colorcet
-    - cycler
-    - george
+    - astroplan
+    - conda
+    - gitpython
     - h5py
     - healpy
     - matplotlib
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
-    - pandas
-    - pyarrow
+    - numexpr
     - pytables
-    - scikit-learn
+    - pandas
+    - requests
     - scipy
-    - sqlalchemy
     - shapely
-    - skyfield
-    - skyproj
-    - rubin-scheduler
-    
+    - tqdm
     

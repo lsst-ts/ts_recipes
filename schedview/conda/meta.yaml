@@ -1,15 +1,19 @@
 {% set data= load_setup_py_data() %}
 package:
-  name: rubin-sim
+  name: schedview
   version: {{ data.get('version') }}
 
 source:
-  git_url: https://github.com/lsst/rubin_sim
+  git_url: https://github.com/lsst/schedview
   git_rev: {{ CONDA_BUILD_TAG }}
 
 build:
-  noarch: python  
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - prenight = schedview.app.prenight.prenight:main
+    - scheduler_dashboard = schedview.app.scheduler_dashboard.scheduler_dashboard:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 test:
   requires:
@@ -19,31 +23,31 @@ test:
     - black
     - ruff
     - isort
-    - astroplan
-    - astropy
+    - python 
+    - astropy >=5.3
+    - bokeh >=3.1.1
     - colorcet
-    - cycler
-    - h5py
     - healpy
+    - holoviews
+    - hvplot
     - matplotlib
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
-    - palpy
     - pandas
-    - pytables
-    - scikit-learn
-    - scipy
-    - sqlalchemy
-    - shapely
-    - skyfield
+    - panel >=1.1.0
+    - param
+    - pytz
+    - pyyaml
+    - skyproj
+    - uranography >=1.1.0
     - rubin-scheduler
+    - rubin-sim >=2
   source_files:
-    - rubin_sim
+    - schedview
     - tests
     - pyproject.toml
   commands:
-    - rs_download_data
+    - prenight
+    - scheduler_dashboard
     - pytest -vsx
 
 requirements:
@@ -62,26 +66,20 @@ requirements:
     - numpy {{ numpy }}
   run:
     - python {{ python }}
-    - astroplan
-    - astropy
+    - astropy >=5.3
+    - bokeh >=3.1.1
     - colorcet
-    - cycler
-    - george
-    - h5py
     - healpy
+    - holoviews
+    - hvplot
     - matplotlib
     - numpy {{ numpy }}
-    - openorb
-    - openorb-data-de405
     - pandas
-    - pyarrow
-    - pytables
-    - scikit-learn
-    - scipy
-    - sqlalchemy
-    - shapely
-    - skyfield
+    - panel >=1.1.0
+    - param
+    - pytz
+    - pyyaml
     - skyproj
-    - rubin-scheduler
-    
-    
+    - uranography >=1.1.0
+    - rubin-scheduler >=3
+    - rubin-sim >=2
