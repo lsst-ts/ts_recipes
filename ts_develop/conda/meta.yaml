@@ -1,13 +1,13 @@
 package:
   name: ts-develop
-  version: 0.4.12
+  version: 0.4.13
 
 build:
   noarch: generic
 
 requirements:
   run:
-    - aiohttp =3.9
+    - aiohttp =3.11
     - aiokafka =0.10
     - aioserial =1.3
     - asgi-lifespan =2
@@ -17,7 +17,7 @@ requirements:
     - asyncqt =0.8
     - asynctest =0.13
     - batoid =0.7
-    - black =24
+    - black =25
     - control =0.9
     - crcmod =1.7
     - danish =0
@@ -36,12 +36,11 @@ requirements:
     - ipdb =0.13
     - ipympl =0.9
     - jupyter =1
-    - kafkacat =1.7
     - kafkit =0.2
     - lsst-efd-client =0.*
     - lxml =5
     - moto =5
-    - mypy =1.11
+    - mypy =1.14
     - paho-mqtt =1.6
     - pandas =2
     - parameterized =0.9
