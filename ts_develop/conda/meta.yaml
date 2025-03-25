@@ -1,12 +1,9 @@
 package:
   name: ts-develop
-  version: 0.4.12
+  version: 0.4.13
 
 build:
   noarch: generic
-  # Remove this when incrementing the version.
-  # Or increment it if rebuilding 0.4.12
-  number: 1
 
 requirements:
   run:
