@@ -1,0 +1,41 @@
+{% set name = "smbus3" %}
+{% set version = "0.5.5" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/smbus3-{{ version }}.tar.gz
+  sha256: 91eed38fb6b7d2f893fbfc3f37006aa41e6913fdda5b3a9a79238b353760f92e
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - smbus3
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/eindiran/smbus3
+  summary: A drop-in replacement for smbus2 written in pure Python for v3.8+
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - bbrondel
