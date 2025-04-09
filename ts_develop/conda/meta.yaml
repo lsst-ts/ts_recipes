@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.13
+  version: 0.4.14
 
 build:
   noarch: generic
@@ -57,7 +57,7 @@ requirements:
     - pydantic =2
     - pydantic-settings =2
     - pydub =0.25
-    - pylibftdi =0.20
+    - pylibftdi =0.23
     - pymodbus =3.8
     - pysnmp =7.1
     - pyside6 =6.8
