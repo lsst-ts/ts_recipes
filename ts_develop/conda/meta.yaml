@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.15
+  version: 0.4.16
 
 build:
   noarch: generic
@@ -75,6 +75,7 @@ requirements:
     - qt6-charts =6.8
     - rubin-env >=9
     - rubin-scheduler =3
+    - ruff =0.*
     - setuptools_scm =8
     - slycot =0.*
     - smbus3 =0.5
@@ -83,6 +84,7 @@ requirements:
     - sphinx-jsonschema =1.19
     - structlog =25.1
     - tornado =6.4
+    - towncrier =24
     - ts-pre-commit-config =0
     - types-pyyaml =6.0
     - types-python-dateutil =2
