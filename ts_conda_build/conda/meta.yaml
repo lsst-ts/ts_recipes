@@ -1,14 +1,15 @@
 package:
   name: ts-conda-build
-  version: 0.4.3
+  version: 0.5.0
 
 build:
   noarch: generic
 
 requirements:
-  build:
+  host:
     - python {{ python }}
-    - numpy {{ numpy }}
+  build:
+    - python {{ python }} # [build_platform != target_platform]
   run:
     - astropy >=5
     - black =24
@@ -17,7 +18,7 @@ requirements:
     - jsonschema =4
     - moto =5
     - mypy =1.11
-    - numpy {{ numpy }}
+    - numpy
     - pre-commit =3.6
     - py =1
     - pytest =8.1
@@ -25,6 +26,4 @@ requirements:
     - pytest-cov =4.1
     - python {{ python }}
     - pyyaml =6
-    - setuptools {{ setuptools }}.*
-    - setuptools_scm {{ setuptools_scm }}.*
     - types-pyyaml =6
