@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.16
+  version: 0.4.17
 
 build:
   noarch: generic
@@ -14,7 +14,7 @@ requirements:
     - asgi-lifespan =2
     - astroplan =0.10
     - astroquery =0.4
-    - asyncinotify =4
+    - asyncinotify =4  # [linux]
     - asyncpg =0.30
     - asyncqt =0.8
     - asynctest =0.13
@@ -39,7 +39,6 @@ requirements:
     - ipympl =0.9
     - jproperties =2.1
     - jupyter =1
-    - kafkacat =1.7
     - kafkit =0.2
     - lsst-efd-client =0.*
     - lxml =5
@@ -55,7 +54,7 @@ requirements:
     - py =1
     - pyasn1 =0.6
     - pyasn1-modules =0.4
-    - pyaudio =0.2
+    - pyaudio =0.2  # [linux]
     - pydantic =2
     - pydantic-settings =2
     - pydub =0.25
