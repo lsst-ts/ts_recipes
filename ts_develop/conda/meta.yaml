@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.4.17
+  version: 0.5.0
 
 build:
   noarch: generic
@@ -23,12 +23,6 @@ requirements:
     - control =0.10
     - crcmod =1.7
     - danish =0
-    - documenteer =0.8.2
-    # Here are the subpackages for documenteer
-    # Out of order because easier to heirarchize
-    - lsst-documenteer-pipelines
-    - lsst-documenteer-guide
-    - lsst-documenteer-technote
     - ephem =4.2
     - fastapi =0
     - ffmpeg =7
@@ -72,14 +66,13 @@ requirements:
     - python-sounddevice =0.5
     - qasync =0.27
     - qt6-charts =6.8
-    - rubin-env >=9
+    - rubin-env >=11
     - rubin-scheduler =3
     - ruff =0.*
     - setuptools_scm =8
     - slycot =0.*
     - smbus3 =0.5
     - sshtunnel =0.4
-    - sphinx =6
     - sphinx-jsonschema =1.19
     - structlog =25.1
     - tornado =6.4
