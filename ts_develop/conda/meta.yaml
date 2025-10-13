@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.2
+  version: 0.5.3
 
 build:
   noarch: generic
@@ -67,6 +67,7 @@ requirements:
     - qasync =0.28
     - qt6-charts =6.9
     - rubin-env >=11
+    - rubin-nights =0.6
     - rubin-scheduler =3
     - ruff =0.*
     - setuptools_scm =9
