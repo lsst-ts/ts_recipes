@@ -71,6 +71,7 @@ requirements:
     - rubin-scheduler =3
     - rubin-sim =2
     - ruff =0.*
+    - schedview =0.19
     - setuptools_scm =9
     - slycot =0.*
     - smbus3 =0.5
