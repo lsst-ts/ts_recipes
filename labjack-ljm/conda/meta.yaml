@@ -14,6 +14,7 @@ requirements:
     - python
     - setuptools
     - setuptools_scm
+    - ts-conda-build =0.5
 
 about:
   home: https://labjack.com/support/software/installers/ljm
