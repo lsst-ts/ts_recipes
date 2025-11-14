@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.7
+  version: 0.5.8
 
 build:
   noarch: generic
@@ -44,6 +44,7 @@ requirements:
     - pigpio =1.78
     - postgresql =17
     - pre-commit =4.3
+    - prophet =1
     - psycopg =3.2
     - py =1
     - pyasn1 =0.6
