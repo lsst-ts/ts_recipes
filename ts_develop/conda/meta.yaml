@@ -70,7 +70,7 @@ requirements:
     - rubin-env >=11
     - rubin-nights =0.6
     - rubin-scheduler =3
-    - rubin-sim =2.4
+    - rubin-sim =2.6
     - ruff =0.*
     - schedview =0.20
     - setuptools_scm =9
