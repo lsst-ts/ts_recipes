@@ -47,7 +47,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools_scm ={{setuptools_scm}
+    - setuptools_scm ={{setuptools_scm}}
   run:
     - python
 
