@@ -1,0 +1,41 @@
+{% set name = "sensirion-sps030" %}
+{% set version = "0.0.8" %}
+
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/FEEprojects/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 9d7456fb5857a49ecdfba46cd0de00869435b832960dcafb4f16fa03e9596e2d
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools_scm ={{setuptools_scm}}
+  run:
+    - python
+    - pyserial
+
+test:
+  imports:
+    - sensirion_sps030
+  requires:
+    - pip
+
+about:
+  home: https://github.com/FEEprojects/sensirion-sps030
+  summary: Sensirion SPS30 Particulate Sensor Python interface.
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - wvreeven
