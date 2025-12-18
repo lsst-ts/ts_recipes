@@ -5,13 +5,16 @@ package:
 source:
   path: ../
 
+build:
+  string: "py{{ PY_VER | replace('.', '') }}{{ PKG_HASH }}_{{ PKG_BUILDNUM }}"
+
 requirements:
   host:
-    - python
+    - python {{ python }}
     - setuptools_scm
     - setuptools
   run:
-    - python
+    - python {{ python }}
     - setuptools
     - setuptools_scm
 

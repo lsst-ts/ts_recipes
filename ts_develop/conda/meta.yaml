@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.4
+  version: 0.5.11
 
 build:
   noarch: generic
@@ -33,7 +33,7 @@ requirements:
     - ipympl =0.9
     - jproperties =2.1
     - jupyter =1
-    - kafkit =0.2
+    - kafkit =0.3
     - lsst-efd-client =0.*
     - lxml =6
     - moto =5
@@ -44,6 +44,7 @@ requirements:
     - pigpio =1.78
     - postgresql =17
     - pre-commit =4.3
+    - prophet =1
     - psycopg =3.2
     - py =1
     - pyasn1 =0.6
@@ -56,8 +57,8 @@ requirements:
     - pymodbus =3.11
     - pysnmp =7.1
     - pyside6 =6.9
-    - pytest =8
-    - pytest-asyncio =1.2
+    - pytest =9
+    - pytest-asyncio =1.3
     - pytest-postgresql =7.0
     - pytest-tornasync =0.6
     - pytest-qt =4.5
@@ -67,11 +68,12 @@ requirements:
     - qasync =0.28
     - qt6-charts =6.9
     - rubin-env >=11
-    - rubin-nights =0.6
+    - rubin-nights =0.8
     - rubin-scheduler =3
-    - rubin-sim =2
+    - rubin-sim =2.6
     - ruff =0.*
-    - schedview =0.19
+    - schedview =0.20
+    - sensirion-sps030 =0.0.8
     - setuptools_scm =9
     - slycot =0.*
     - smbus3 =0.5
