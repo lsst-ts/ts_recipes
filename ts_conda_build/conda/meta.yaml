@@ -1,6 +1,6 @@
 package:
   name: ts-conda-build
-  version: 0.5.3
+  version: 0.5.4
 
 build:
   noarch: generic
@@ -14,6 +14,7 @@ requirements:
     - astropy >=5
     - boto3 =1.40
     - jsonschema =4
+    - librdkafka =2.12
     - moto =5
     - numpy
     - pre-commit =4.3
@@ -22,5 +23,6 @@ requirements:
     - pytest-asyncio =1.2
     - pytest-cov =7
     - python {{ python }}
+    - python-confluent-kafka =2.12
     - pyyaml =6
     - types-pyyaml =6

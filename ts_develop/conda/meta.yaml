@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.11
+  version: 0.5.13
 
 build:
   noarch: generic
@@ -34,6 +34,7 @@ requirements:
     - jproperties =2.1
     - jupyter =1
     - kafkit =0.3
+    - librdkafka =2.12
     - lsst-efd-client =0.*
     - lxml =6
     - moto =5
@@ -63,12 +64,12 @@ requirements:
     - pytest-tornasync =0.6
     - pytest-qt =4.5
     - pytest-xvfb =3.1
-    - python-confluent-kafka =2
+    - python-confluent-kafka =2.12
     - python-sounddevice =0.5
     - qasync =0.28
     - qt6-charts =6.9
     - rubin-env >=11
-    - rubin-nights =0.8
+    - rubin-nights =0.10
     - rubin-scheduler =3
     - rubin-sim =2.6
     - ruff =0.*
