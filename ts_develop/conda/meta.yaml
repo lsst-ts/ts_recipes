@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.13
+  version: 0.5.14
 
 build:
   noarch: generic
@@ -72,6 +72,7 @@ requirements:
     - rubin-nights =0.10
     - rubin-scheduler =3
     - rubin-sim =2.6
+    - palpy
     - ruff =0.*
     - schedview =0.20
     - sensirion-sps030 =0.0.8
