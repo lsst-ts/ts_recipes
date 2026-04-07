@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.15
+  version: 0.5.16
 
 build:
   noarch: generic
@@ -69,7 +69,7 @@ requirements:
     - qasync =0.28
     - qt6-charts =6.9
     - rubin-env >=11
-    - rubin-nights =0.12
+    - rubin-nights =0.13
     - rubin-scheduler =3
     - rubin-sim =2.6
     - palpy
