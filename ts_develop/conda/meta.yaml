@@ -73,7 +73,7 @@ requirements:
     - rubin-sim =2.6
     - palpy
     - ruff =0.*
-    - schedview =0.20
+    - schedview =0.23
     - sensirion-sps030 =0.0.8
     - setuptools_scm =9
     - slycot =0.*
