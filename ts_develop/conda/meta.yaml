@@ -68,7 +68,7 @@ requirements:
     - qasync =0.28
     - qt6-charts =6.10
     - rubin-env >=11
-    - rubin-nights =0.14
+    - rubin-nights =0.18
     - rubin-scheduler =3
     - rubin-sim =2.6
     - palpy
