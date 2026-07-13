@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.5.19
+  version: 0.5.20
 
 build:
   noarch: generic
@@ -27,6 +27,7 @@ requirements:
     - ffmpeg =8
     - ginga =5.4
     - httpx =0.28
+    - ijson =3
     - intelhex =2.3.0
     - ipdb =0.13
     - ipympl =0.9
@@ -67,6 +68,7 @@ requirements:
     - python-sounddevice =0.5
     - qasync =0.28
     - qt6-charts =6.10
+    - redis-py =7
     - rubin-env >=11
     - rubin-nights =0.18
     - rubin-scheduler =3
