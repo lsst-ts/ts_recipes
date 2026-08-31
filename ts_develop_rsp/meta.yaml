@@ -1,0 +1,11 @@
+package:
+   name: ts-develop-rsp
+   version: 0.1.0
+   
+build:
+   noarch: generic
+   
+requirements:
+   run:
+      - ts-develop =0.6
+      - rubin-env =13
