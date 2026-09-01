@@ -1,17 +1,20 @@
 package:
   name: ts-develop
-  version: 0.5.20
+  version: 0.6.0
 
 build:
   noarch: generic
 
 requirements:
+  host:
+    - python {{ python }}
   run:
     - aiohttp =3.12
     - aiokafka =0.12
     - aioserial =1.3
     - aiosqlite =0.21
     - asgi-lifespan =2
+    - authlib
     - astroplan =0.10
     - astroquery =0.4
     - asyncinotify =4  # [linux]
@@ -19,10 +22,11 @@ requirements:
     - asyncqt =0.8
     - asynctest =0.13
     - batoid =0.8
-    - black =25
+    - cachetools
     - control =0.10
     - crcmod =1.7
     - ephem =4.2
+    - eups
     - fastapi =0
     - ffmpeg =8
     - ginga =5.4
@@ -35,7 +39,8 @@ requirements:
     - jupyter =1
     - kafkit =0.3
     - librdkafka =2.12
-    - lsst-efd-client =0.*
+    - lsst-efd-client =1
+    - lsst-documenteer-guide =2
     - lxml =6
     - moto =5
     - mypy =1.18
@@ -63,7 +68,9 @@ requirements:
     - pytest-postgresql =7.0
     - pytest-tornasync =0.6
     - pytest-qt =4.5
+    - pytest-xdist
     - pytest-xvfb =3.1
+    - python {{ python }}
     - python-confluent-kafka =2.12
     - python-sounddevice =0.5
     - qasync =0.28
@@ -74,7 +81,6 @@ requirements:
     - rubin-scheduler =3
     - rubin-sim =2.6
     - palpy
-    - ruff =0.*
     - schedview =0.23
     - sensirion-sps030 =0.0.8
     - setuptools_scm =9
@@ -93,4 +99,5 @@ requirements:
     - wget =1.21
     - yamllint =1.37
     - zaber-motion =7.11
-    - zaber-serial =0.9
+  run_constrained:
+    - rubin-env >=13,<14
