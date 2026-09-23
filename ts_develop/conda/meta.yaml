@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.6.0
+  version: 0.6.1
 
 build:
   noarch: generic
@@ -77,7 +77,7 @@ requirements:
     - qt6-charts =6.10
     - redis-py =7
     - rubin-nights =0.18
-    - rubin-scheduler =3
+    - rubin-scheduler =4.*
     - rubin-sim =2.6
     - palpy
     - schedview =0.23
