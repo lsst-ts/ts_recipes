@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.6.1
+  version: 0.6.2
 
 build:
   noarch: generic
