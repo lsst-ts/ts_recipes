@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.6.3
+  version: 0.6.4
 
 build:
   noarch: generic
@@ -23,12 +23,21 @@ requirements:
     - asynctest =0.13
     - batoid =0.8
     - cachetools
+    - channels =4.1
+    - channels_redis =4.2
     - control =0.10
     - crcmod =1.7
+    - daphne =4.2
+    - django =5.2
+    - django-auth-ldap =5.4
+    - django-cors-headers =4.4
+    - djangorestframework =3.15
+    - drf-yasg =1.21
     - ephem =4.2
     - eups
     - fastapi =0
     - ffmpeg =8
+    - freezegun =1.5
     - ginga =5.4
     - httpx =0.28
     - ijson =3
@@ -43,6 +52,7 @@ requirements:
     - lsst-documenteer-guide =2
     - lxml =6
     - moto =5
+    - m2r2 =2.1
     - mypy =1.18
     - paho-mqtt =2.1
     - pandas =2
@@ -66,6 +76,8 @@ requirements:
     - pytest =9
     - pytest-asyncio =1.3
     - pytest-cov=7
+    - pytest-django =4.11
+    - pytest-env =1.8
     - pytest-postgresql =7.0
     - pytest-tornasync =0.6
     - pytest-qt =4.5
@@ -73,6 +85,7 @@ requirements:
     - pytest-xvfb =3.1
     - python {{ python }}
     - python-confluent-kafka =2.12
+    - python-ldap =3.4
     - python-sounddevice =0.5
     - qasync =0.28
     - qt6-charts =6.10
@@ -88,6 +101,7 @@ requirements:
     - smbus3 =0.5
     - sshtunnel =0.4
     - sphinx-jsonschema =1.19
+    - standard-imghdr =3.13
     - structlog =25.4
     - tornado =6.5
     - towncrier =25
