@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.6.5
+  version: 0.6.6
 
 build:
   noarch: generic
@@ -87,7 +87,7 @@ requirements:
     - python-ldap =3.4
     - python-confluent-kafka =2.16
     - python-sounddevice =0.5
-    - qasync =0.28
+    - qasync =0.29
     - qt6-charts =6.11
     - redis-py =7
     - rubin-nights =0.18
