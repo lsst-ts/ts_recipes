@@ -1,6 +1,6 @@
 package:
   name: ts-develop
-  version: 0.6.6
+  version: 0.6.7
 
 build:
   noarch: generic
@@ -90,7 +90,7 @@ requirements:
     - qasync =0.29
     - qt6-charts =6.11
     - redis-py =7
-    - rubin-nights =0.18
+    - rubin-nights =0.19
     - rubin-scheduler =4.*
     - rubin-sim =2.6
     - palpy
